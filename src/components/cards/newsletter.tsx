@@ -24,7 +24,7 @@ export default function NewsletterSignUp() {
             minH={'50vh'}
             align={'center'}
             justify={'center'}
-            bg={useColorModeValue('gray.50', 'gray.800')}
+            // bg={useColorModeValue('gray.50', 'gray.800')}
         >
             <Container
                 maxW={'lg'}
@@ -89,12 +89,12 @@ export default function NewsletterSignUp() {
                     </FormControl>
                     <FormControl w={{ base: '100%', md: '40%' }}>
                         <Button
-                            colorScheme={state === 'success' ? 'green' : 'blue'}
+                            colorScheme={state === 'success' ? 'blue' : 'green'}
                             isLoading={state === 'submitting'}
                             w="100%"
                             type={state === 'success' ? 'button' : 'submit'}
                         >
-                            {state === 'success' ? <CheckIcon /> : 'Submit'}
+                            {state === 'success' ? <CheckIcon /> : 'Sign Up'}
                         </Button>
                     </FormControl>
                 </Stack>
@@ -105,7 +105,7 @@ export default function NewsletterSignUp() {
                 >
                     {error
                         ? 'Oh no an error occured! 😢 Please try again later.'
-                        : "You won't receive any spam! ✌️"}
+                        : "You won't receive any spam! 👌🏾"}
                 </Text>
             </Container>
         </Flex>

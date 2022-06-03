@@ -1,22 +1,20 @@
 import { Box, Container } from '@chakra-ui/react'
-import LatestPosts from 'components/home-sections/latest-posts'
-import Hero from 'components/cards/hero'
-import NewsletterSignUp from 'components/cards/newsletter'
-import Navbar from 'components/navigation/navbar'
+import LatestPosts from 'src/components/sections/blogpost-section'
+import Hero from 'src/components/sections/hero'
+import NewsletterSignUp from 'src/components/cards/newsletter'
+import Header from 'src/components/layout/header'
 
 import type { NextPage } from 'next'
-import LatestVideos from 'components/home-sections/lastest-videos'
-import CurrentProjects from 'components/home-sections/current-projects'
-import Footer from 'components/navigation/footer'
+import LatestVideos from 'src/components/sections/lastest-videos'
+import Footer from 'src/components/layout/footer'
 
 const Home: NextPage = () => {
     return (
-        <Container>
+        <Container maxWidth={'container.md'}>
             <Box>
-                <Navbar />
+                <Header />
                 <Hero />
                 <NewsletterSignUp />
-                <CurrentProjects />
                 <LatestPosts />
                 <LatestVideos />
                 <Footer />
