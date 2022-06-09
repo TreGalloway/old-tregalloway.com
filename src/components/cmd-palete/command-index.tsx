@@ -18,7 +18,7 @@ import { createDescendantContext } from '@chakra-ui/descendant'
 import { CgArrowRight } from 'react-icons/cg'
 import { useKeyPressEvent } from 'react-use'
 
-import { PageItem, SocialItem, ThemeItem } from '@/data/cmd-palette'
+import { PageItem, SocialItem, ThemeItem } from '../../../data/cmd-palete'
 import CommandItem from './command-item'
 import { CmdPaletteContext } from 'src/providers/cmd-palette-provider'
 
@@ -191,7 +191,8 @@ const CmdPalette = () => {
                                 <MenuDescendantsProvider value={descendants}>
                                     {Object.keys(commands).map((section) => (
                                         <>
-                                            {commands[section].length > 0 && (
+                                            {(commands as any)[section].length >
+                                                0 && (
                                                 <ListItem key={section}>
                                                     <Text
                                                         my={2}
@@ -203,7 +204,7 @@ const CmdPalette = () => {
                                                     </Text>
                                                 </ListItem>
                                             )}
-                                            {commands[section].map(
+                                            {(commands as any)[section].map(
                                                 (command: any) => {
                                                     if (section === 'pages') {
                                                         const { title, href } =

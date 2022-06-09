@@ -17,10 +17,14 @@
     "framer-motion": "^6.3.4",
     "next": "12.1.6",
     "next-contentlayer": "^0.2.5",
+    "next-seo": "^5.4.0",
     "react": "18.1.0",
     "react-dom": "18.1.0",
     "react-icons": "^4.4.0",
-    "react-use": "^17.4.0"
+    "react-use": "^17.4.0",
+    "reading-time": "^1.5.0",
+    "slugify": "^1.6.5",
+    "timeago.js": "^4.0.2"
   },
   "devDependencies": {
     "@types/node": "17.0.36",

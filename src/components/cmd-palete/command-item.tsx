@@ -22,7 +22,7 @@ type Props = {
 
 const CommandItem = ({ icon, title, onClick, href }: Props) => {
     const { focusedIndex, close } = useContext(CmdPaletteContext)
-    const ref = useRef<HTMLLIElement>()
+    const ref = useRef<HTMLLIElement | any>()
     const router = useRouter()
     const isExternal = href && href.startsWith('http')
 

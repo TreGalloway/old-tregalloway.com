@@ -50,31 +50,31 @@ export const searchItems: SearchItemsType = {
             title: 'Blog',
             href: '/blog',
         },
-        {
-            title: 'Colophon',
-            href: '/colophon',
-        },
-        {
-            title: 'Talks',
-            href: '/talks',
-        },
+        // {
+        //     title: 'Colophon',
+        //     href: '/colophon',
+        // },
+        // {
+        //     title: 'Talks',
+        //     href: '/talks',
+        // },
 
-        {
-            title: 'Uses',
-            href: '/uses',
-        },
-        {
-            title: 'Gear',
-            href: '/gear',
-        },
-        {
-            title: 'Bookmarks',
-            href: '/bookmarks',
-        },
-        {
-            title: 'Books',
-            href: '/books',
-        },
+        // {
+        //     title: 'Uses',
+        //     href: '/uses',
+        // },
+        // {
+        //     title: 'Gear',
+        //     href: '/gear',
+        // },
+        // {
+        //     title: 'Bookmarks',
+        //     href: '/bookmarks',
+        // },
+        // {
+        //     title: 'Books',
+        //     href: '/books',
+        // },
         {
             title: 'Newsletter',
             href: '/newsletter',
