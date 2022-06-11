@@ -1,12 +1,12 @@
 import { Heading, VStack, List, ListItem, Icon, Box } from '@chakra-ui/react'
 import { CgArrowRight } from 'react-icons/cg'
 
-import { BlogPost } from '../../types/blog-post'
+import { Posts } from '../../types/blog-post'
 import BlogPostCard from '../cards/blog-post-card'
 import Link from '../link/link'
 
 type Props = {
-    posts: BlogPost[]
+    posts: Posts[]
 }
 
 const BlogpostsSection = ({ posts }: Props) => {
@@ -14,7 +14,7 @@ const BlogpostsSection = ({ posts }: Props) => {
         <VStack as="section" alignItems="flex-start" w="full" spacing={4}>
             <Heading size="md">Recent blog posts.</Heading>
             <List w="full" spacing={{ base: 8, md: 2 }}>
-                {posts?.map((post) => (
+                {(posts || []).map((post) => (
                     <ListItem key={post.slug}>
                         <BlogPostCard {...post} />
                     </ListItem>

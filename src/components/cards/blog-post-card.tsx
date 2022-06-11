@@ -10,7 +10,7 @@ import {
 
 import { format } from 'timeago.js'
 
-import { BlogPost } from '../../types/blog-post'
+import { Posts } from '../../types/blog-post'
 
 const BlogPostCard = ({
     title,
@@ -18,7 +18,7 @@ const BlogPostCard = ({
     slug,
     date,
     readingTime,
-}: BlogPost) => {
+}: Posts) => {
     return (
         <LinkBox as="article">
             <VStack

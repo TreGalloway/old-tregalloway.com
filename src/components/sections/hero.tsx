@@ -12,6 +12,7 @@ import { FiArrowUpRight } from 'react-icons/fi'
 import {
     GITHUB_PROFILE,
     YOUTUBE_CHANNEL,
+    POLYWORK_PROFILE,
     TWITTER_PROFILE,
 } from '../../../constants'
 import { Link as LinkType } from '../../types/link'
@@ -34,6 +35,11 @@ const socialLinks: SocialLink[] = [
     {
         href: GITHUB_PROFILE,
         label: 'GitHub',
+    },
+    {
+        href: POLYWORK_PROFILE,
+        label: 'Polywork',
+        color: 'purple.500',
     },
 ]
 
@@ -59,8 +65,12 @@ const Hero = () => {
                     </Heading>
                 </Stack>
                 <Text as="h2" lineHeight="175%">
-                    I’m a <strong>Front-End Web Developer</strong> (React
-                    Ecosystem), and a Content Creator.
+                    I’m a <strong>Front-End Web Developer</strong> & Content
+                    Creator. My tech stack focuses in the{' '}
+                    <strong>React </strong>
+                    ecosystem (Typescript,NextJS). I also create content on
+                    <strong> personal development</strong> and{' '}
+                    <strong>coding</strong> .
                     {/*  I work at{' '}
                     <ExternalLink href="https://codechem.com">
                         CodeChem

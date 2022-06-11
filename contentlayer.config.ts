@@ -3,11 +3,11 @@ import readingTime from 'reading-time'
 
 export const Post = defineDocumentType(() => ({
     name: 'Post',
-    filePathPattern: '**/*.mdx?',
+    filePathPattern: '**/*.mdx',
     contentType: 'mdx',
     fields: {
         title: { type: 'string', required: true },
-        publishedAt: { type: 'string', required: true },
+        date: { type: 'string', required: true },
         description: { type: 'string', required: true },
         cover: { type: 'string' },
         tag: { type: 'string' },

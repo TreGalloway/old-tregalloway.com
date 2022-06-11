@@ -3,6 +3,7 @@ import {
     SiTwitter,
     SiGithub,
     SiYoutube,
+    SiPolywork,
     SiLinkedin,
     SiInstagram,
 } from 'react-icons/si'
@@ -11,6 +12,7 @@ import { IoMoon } from 'react-icons/io5'
 import {
     GITHUB_PROFILE,
     LINKEDIN_PROFILE,
+    POLYWORK_PROFILE,
     INSTAGRAM_PROFILE,
     TWITTER_PROFILE,
     YOUTUBE_CHANNEL,
@@ -50,23 +52,23 @@ export const searchItems: SearchItemsType = {
             title: 'Blog',
             href: '/blog',
         },
-        // {
-        //     title: 'Colophon',
-        //     href: '/colophon',
-        // },
-        // {
-        //     title: 'Talks',
-        //     href: '/talks',
-        // },
+        {
+            title: 'Portfolio',
+            href: '/portfolio',
+        },
+        {
+            title: 'Tools',
+            href: '/tools',
+        },
+        {
+            title: 'Gear',
+            href: '/gear',
+        },
+        {
+            title: 'Video Archive',
+            href: '/video archive',
+        },
 
-        // {
-        //     title: 'Uses',
-        //     href: '/uses',
-        // },
-        // {
-        //     title: 'Gear',
-        //     href: '/gear',
-        // },
         // {
         //     title: 'Bookmarks',
         //     href: '/bookmarks',
@@ -82,6 +84,11 @@ export const searchItems: SearchItemsType = {
     ],
     social: [
         {
+            title: 'YouTube',
+            icon: SiYoutube,
+            href: YOUTUBE_CHANNEL,
+        },
+        {
             title: 'Twitter',
             icon: SiTwitter,
             href: TWITTER_PROFILE,
@@ -92,15 +99,16 @@ export const searchItems: SearchItemsType = {
             href: GITHUB_PROFILE,
         },
         {
-            title: 'YouTube',
-            icon: SiYoutube,
-            href: YOUTUBE_CHANNEL,
+            title: 'Polywork',
+            icon: SiPolywork,
+            href: POLYWORK_PROFILE,
         },
         {
             title: 'LinkedIn',
             icon: SiLinkedin,
             href: LINKEDIN_PROFILE,
         },
+
         {
             title: 'Instagram',
             icon: SiInstagram,

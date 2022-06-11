@@ -58,11 +58,11 @@ export default function Footer() {
             <Container as={Stack} maxW={'6xl'} py={10}>
                 <SimpleGrid columns={{ base: 1, sm: 2, md: 4 }} spacing={8}>
                     <Stack align={'flex-start'}>
-                        <Link href={'#'}>Home</Link>
-                        <Link href={'#'}>Blog</Link>
-                        <Link href={'#'}>Portfolio</Link>
-                        <Link href={'#'}>Video Archive</Link>
-                        <Link href={'#'}>Newsletter</Link>
+                        <Link href={'/'}>Home</Link>
+                        <Link href={'/blog'}>Blog</Link>
+                        <Link href={'/portfolio'}>Portfolio</Link>
+                        <Link href={'/video archive'}>Video Archive</Link>
+                        <Link href={'/newsletter'}>Newsletter</Link>
                     </Stack>
                 </SimpleGrid>
             </Container>
