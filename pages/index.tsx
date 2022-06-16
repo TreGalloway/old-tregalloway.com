@@ -19,7 +19,7 @@ const Home = ({ posts }: Props) => {
                     <NewsletterForm />
                 </Box>
 
-                <BlogpostsSection posts={posts} />
+                <BlogpostsSection />
             </Box>
         </Container>
     )

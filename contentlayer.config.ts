@@ -36,6 +36,7 @@ export const Post = defineDocumentType(() => ({
     filePathPattern: 'posts/*.mdx',
     contentType: 'mdx',
     fields: {
+        featured: { type: 'boolean' },
         title: { type: 'string', required: true },
         date: { type: 'string', required: true },
         description: { type: 'string', required: true },
@@ -49,6 +50,7 @@ const Project = defineDocumentType(() => ({
     filePathPattern: 'projects/*.mdx',
     contentType: 'mdx',
     fields: {
+        featured: { type: 'boolean' },
         title: { type: 'string', required: true },
         description: { type: 'string' },
         stack: { type: 'string' },
