@@ -1,7 +1,7 @@
 export type Project = {
     title: string
     description: string
-    tags: string
+    stack: string[]
     live: string
     github: string
 }

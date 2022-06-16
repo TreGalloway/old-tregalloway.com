@@ -20,15 +20,6 @@ import Link from '../link/link'
 type Props = Project
 
 const ProjectCard = ({ title, description, live, github }: Props) => {
-    const [videoId, setVideoId] = useState<string>()
-
-    // useEffect(() => {
-    //     const queryParams = url.split('?')[1]
-    //     const params = new URLSearchParams(queryParams)
-    //     setVideoId(params.get('v'))
-    // }, [url])
-
-    if (!videoId) return <Spinner />
     return (
         <VStack alignItems="flex-start" spacing={4}>
             <AspectRatio

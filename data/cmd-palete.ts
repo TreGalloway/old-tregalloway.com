@@ -65,8 +65,8 @@ export const searchItems: SearchItemsType = {
             href: '/gear',
         },
         {
-            title: 'Video Archive',
-            href: '/video archive',
+            title: 'Videos',
+            href: '/videos',
         },
 
         // {
