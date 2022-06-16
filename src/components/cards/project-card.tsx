@@ -1,25 +1,27 @@
-import { useState, useEffect } from 'react'
+import { Project } from '.contentlayer/generated'
 import {
     VStack,
     AspectRatio,
-    Spinner,
     Heading,
     Text,
-    LinkBox,
-    LinkOverlay,
     Flex,
-    Icon,
     Box,
+    Button,
+    Icon,
+    Link,
+    HStack,
 } from '@chakra-ui/react'
+import { FiGithub, FiExternalLink } from 'react-icons/fi'
+import { useMDXComponent } from 'next-contentlayer/hooks'
+// import Link from '../link/link'
 
-import { Project } from '../../types/project'
-import Image from '../image/image'
-import { HiPlay } from 'react-icons/hi'
-import Link from '../link/link'
+type ProjectCardProps = {
+    data: Project
+}
 
-type Props = Project
-
-const ProjectCard = ({ title, description, live, github }: Props) => {
+export default function ProjectCard(props: ProjectCardProps) {
+    const { data: project } = props
+    const Component = useMDXComponent(project.body.code)
     return (
         <VStack alignItems="flex-start" spacing={4}>
             <AspectRatio
@@ -55,16 +57,45 @@ const ProjectCard = ({ title, description, live, github }: Props) => {
                 </>
             </AspectRatio>
             <VStack alignItems="flex-start" spacing={2}>
-                <Heading size="md">{title}</Heading>
+                <Heading size="md">{project.title}</Heading>
 
-                <Text color="gray.500" fontSize="sm">
-                    {description}
+                <Text fontSize="sm">{project.description}</Text>
+                <Text fontSize="sm">
+                    <strong>{project.stack}</strong>
                 </Text>
-                <Link href={live}>Live.</Link>
-                <Link href={github}>Github.</Link>
+                <HStack>
+                    <Button
+                        key={project.github}
+                        as={Link}
+                        justifyContent={{
+                            base: 'flex-start',
+                            md: 'center',
+                        }}
+                        px={4}
+                        href={project.github}
+                        leftIcon={<Icon as={FiGithub} />}
+                        target="_blank"
+                        variant="ghost"
+                    >
+                        Github.
+                    </Button>
+                    <Button
+                        key={project.live}
+                        as={Link}
+                        justifyContent={{
+                            base: 'flex-start',
+                            md: 'center',
+                        }}
+                        px={4}
+                        href={project.live}
+                        leftIcon={<Icon as={FiExternalLink} />}
+                        target="_blank"
+                        variant="ghost"
+                    >
+                        Live.
+                    </Button>
+                </HStack>
             </VStack>
         </VStack>
     )
 }
-
-export default ProjectCard

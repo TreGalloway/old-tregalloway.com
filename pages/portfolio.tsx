@@ -16,7 +16,7 @@ const Portfolio = ({ projects }: Props) => {
             <Heading size="lg">Portfolio.</Heading>
             <PortfolioHero />
             <Skills />
-            <PortfolioSection projects={projects} />
+            <PortfolioSection />
         </VStack>
     )
 }

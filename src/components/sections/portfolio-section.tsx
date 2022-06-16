@@ -1,13 +1,9 @@
+import { allProjects } from 'contentlayer/generated'
 import { SimpleGrid, GridItem, VStack } from '@chakra-ui/react'
-
-import { Project } from '../../types/project'
+import MDXComponents from '../mdx-component/mdx-components'
 import ProjectCard from '../cards/project-card'
 
-type Props = {
-    projects: Project[]
-}
-
-const PortfolioSection = ({ projects }: Props) => {
+export default function PortfolioSection() {
     return (
         <VStack as="section" alignItems="flex-start" w="full" spacing={4}>
             <SimpleGrid
@@ -17,14 +13,12 @@ const PortfolioSection = ({ projects }: Props) => {
                 columns={{ base: 1, md: 2 }}
                 spacing={6}
             >
-                {projects.map((project) => (
+                {allProjects.map((project) => (
                     <GridItem key={project.title} as="article">
-                        <ProjectCard {...project} />
+                        <ProjectCard key={project.title} data={project} />
                     </GridItem>
                 ))}
             </SimpleGrid>
         </VStack>
     )
 }
-
-export default PortfolioSection

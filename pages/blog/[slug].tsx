@@ -2,19 +2,20 @@ import { NextSeo } from 'next-seo'
 import { allPosts, Post } from 'contentlayer/generated'
 import { VStack, Heading, HStack, Text, Divider } from '@chakra-ui/react'
 import { useMDXComponent } from 'next-contentlayer/hooks'
+import type { GetStaticPaths, GetStaticProps } from 'next'
 import MDXComponents from '@/components/mdx-component/mdx-components'
 import { format } from 'timeago.js'
 import ScrollToTopButton from '../../src/components/scroll-to-top-button/scroll-to-top-button'
 import NewsletterForm from '../../src/components/newsletter-form/newsletter-form'
 
-export const getStaticPaths = async () => {
+export const getStaticPaths: GetStaticPaths = async () => {
     return {
         paths: allPosts.map((post) => ({ params: { slug: post.slug } })),
         fallback: false,
     }
 }
 
-export const getStaticProps = async ({ params }) => {
+export const getStaticProps: GetStaticProps = async ({ params }) => {
     const blog = allPosts.find((p) => p.slug === params.slug)
     return {
         props: {
@@ -75,11 +76,7 @@ export default function Blog({ post }: { post: Post }) {
                         <time dateTime={post.date}>{post.date}</time>
                     </HStack>
                 </VStack>
-                <Component
-                    components={{
-                        ...MDXComponents,
-                    }}
-                />
+                <Component components={MDXComponents} />
                 <Divider />
                 <NewsletterForm />
             </VStack>

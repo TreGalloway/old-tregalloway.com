@@ -1,5 +1,34 @@
-import { defineDocumentType, makeSource } from 'contentlayer/source-files'
+import {
+    defineDocumentType,
+    makeSource,
+    ComputedFields,
+} from 'contentlayer/source-files'
 import readingTime from 'reading-time'
+
+const computedFields: ComputedFields = {
+    readingTime: {
+        type: 'json',
+        resolve: (doc) => readingTime(doc.body.raw, { wordsPerMinute: 300 }),
+    },
+    slug: {
+        type: 'string',
+        resolve: (doc) => doc._raw.sourceFileName.replace(/\.mdx$/, ''),
+    },
+    tweetUrl: {
+        type: 'string',
+        resolve: (doc) => {
+            const slug = doc._raw.sourceFileName.replace(/\.mdx$/, '')
+            return `https://twitter.com/intent/tweet?${new URLSearchParams({
+                url: `https://adebayosegun.com/${doc.type.toLowerCase()}/${slug}`,
+                text: `I just read "${doc.title}" by @thesegunadebayo\n\n`,
+            })}`
+        },
+    },
+    params: {
+        type: 'list',
+        resolve: (doc) => doc._raw.flattenedPath.split('/'),
+    },
+}
 
 export const Post = defineDocumentType(() => ({
     name: 'Post',
@@ -13,21 +42,26 @@ export const Post = defineDocumentType(() => ({
         cover: { type: 'string' },
         tag: { type: 'string' },
     },
-    computedFields: {
-        readingTime: {
-            type: 'json',
-            resolve: (doc) => readingTime(doc.body.raw),
-        },
-        slug: {
-            type: 'string',
-            resolve: (post) => post._raw.sourceFileName.replace(/\.mdx$/, ''),
-        },
+    computedFields,
+}))
+const Project = defineDocumentType(() => ({
+    name: 'Project',
+    filePathPattern: 'projects/*.mdx',
+    contentType: 'mdx',
+    fields: {
+        title: { type: 'string', required: true },
+        description: { type: 'string' },
+        stack: { type: 'string' },
+        github: { type: 'string' },
+        live: { type: 'string' },
+        image: { type: 'string' },
     },
+    computedFields,
 }))
 export default makeSource({
     // Location of source files for all defined documentTypes
     contentDirPath: 'content',
-    documentTypes: [Post],
+    documentTypes: [Post, Project],
     mdx: {
         remarkPlugins: [],
         rehypePlugins: [],
