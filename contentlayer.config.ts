@@ -3,7 +3,8 @@ import readingTime from 'reading-time'
 
 export const Post = defineDocumentType(() => ({
     name: 'Post',
-    filePathPattern: '**/*.mdx',
+    // Location of Post source files (relative to `contentDirPath`)
+    filePathPattern: 'posts/*.mdx',
     contentType: 'mdx',
     fields: {
         title: { type: 'string', required: true },
@@ -19,12 +20,13 @@ export const Post = defineDocumentType(() => ({
         },
         slug: {
             type: 'string',
-            resolve: (doc) => doc._raw.sourceFileName.replace(/\.mdx/, ''),
+            resolve: (post) => post._raw.sourceFileName.replace(/\.mdx$/, ''),
         },
     },
 }))
 export default makeSource({
-    contentDirPath: 'posts',
+    // Location of source files for all defined documentTypes
+    contentDirPath: 'content',
     documentTypes: [Post],
     mdx: {
         remarkPlugins: [],

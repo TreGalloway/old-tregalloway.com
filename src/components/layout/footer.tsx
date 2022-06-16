@@ -78,16 +78,30 @@ export default function Footer() {
                     align={{ md: 'center' }}
                 >
                     <Stack direction={'row'} spacing={6}>
-                        <SocialButton label={'YouTube'} href={'#'}>
+                        <SocialButton
+                            label={'YouTube'}
+                            href={
+                                'https://www.youtube.com/channel/UCRQPGu1zovYhIdP86WCTKLw'
+                            }
+                        >
                             <FaYoutube />
                         </SocialButton>
-                        <SocialButton label={'Twitter'} href={'#'}>
+                        <SocialButton
+                            label={'Twitter'}
+                            href={'https://twitter.com/bytregalloway'}
+                        >
                             <FaTwitter />
                         </SocialButton>
-                        <SocialButton label={'Instagram'} href={'#'}>
+                        <SocialButton
+                            label={'Instagram'}
+                            href={'https://www.instagram.com/bytregalloway/'}
+                        >
                             <FaInstagram />
                         </SocialButton>
-                        <SocialButton label={'LinkedIn'} href={'#'}>
+                        <SocialButton
+                            label={'LinkedIn'}
+                            href={'https://www.linkedin.com/in/tregalloway'}
+                        >
                             <FaLinkedinIn />
                         </SocialButton>
                     </Stack>

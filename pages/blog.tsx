@@ -1,5 +1,10 @@
 import { ChangeEventHandler, useState } from 'react'
-import { GetStaticProps } from 'next'
+import {
+    GetStaticProps,
+    GetStaticPropsResult,
+    InferGetStaticPropsType,
+    NextPage,
+} from 'next'
 import {
     Heading,
     Text,
@@ -14,16 +19,21 @@ import {
 import { NextSeo } from 'next-seo'
 import { HiOutlineSearch } from 'react-icons/hi'
 
-import { Posts } from 'src/types/blog-post'
-import { getBlogPosts } from '../../src/utils/get-blog-posts'
-import BlogPostCard from '../../src/components/cards/blog-post-card'
+import { BlogPost } from '@/types/blog-post'
+import { getBlogPosts } from '@/utils/get-blog-posts'
+import BlogPostCard from '../src/components/cards/blog-post-card'
+import { allPosts, Post } from 'contentlayer/generated'
 
-type Props = {
-    posts: Posts[]
+export async function getStaticProps(): Promise<
+    GetStaticPropsResult<{ posts: Post[] }>
+> {
+    return { props: { posts: allPosts } }
 }
 
-const Blog = ({ posts }: Props) => {
-    const [displayPosts, setDisplayPosts] = useState<Posts[]>(posts)
+const Blog: NextPage<InferGetStaticPropsType<typeof getStaticProps>> = ({
+    posts,
+}) => {
+    const [displayPosts, setDisplayPosts] = useState<Post[]>(posts)
 
     const onSearch: ChangeEventHandler<HTMLInputElement> = (event) => {
         const query = event.currentTarget.value
@@ -41,8 +51,8 @@ const Blog = ({ posts }: Props) => {
             <VStack as="section" alignItems="flex-start" w="full" spacing={3}>
                 <Heading size="md">Blog.</Heading>
                 <Text fontSize="md">
-                    Web development, with a focus on the React ecosystem. I’ve
-                    written a total of {posts.length} articles.
+                    Web development, Personal development, and my thought &
+                    ideas. I’ve written a total of {posts.length} articles.
                 </Text>
                 <InputGroup>
                     <InputLeftElement pointerEvents="none">
@@ -67,18 +77,6 @@ const Blog = ({ posts }: Props) => {
             )}
         </>
     )
-}
-
-export const getStaticProps: GetStaticProps<Props> = async () => {
-    const posts = await getBlogPosts()
-
-    const props: Props = {
-        posts,
-    }
-
-    return {
-        props,
-    }
 }
 
 export default Blog

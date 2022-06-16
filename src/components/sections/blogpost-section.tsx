@@ -1,12 +1,13 @@
 import { Heading, VStack, List, ListItem, Icon, Box } from '@chakra-ui/react'
 import { CgArrowRight } from 'react-icons/cg'
+import { allPosts, Post } from 'contentlayer/generated'
 
-import { Posts } from '../../types/blog-post'
+import { BlogPost } from '../../types/blog-post'
 import BlogPostCard from '../cards/blog-post-card'
 import Link from '../link/link'
 
 type Props = {
-    posts: Posts[]
+    posts: BlogPost[]
 }
 
 const BlogpostsSection = ({ posts }: Props) => {

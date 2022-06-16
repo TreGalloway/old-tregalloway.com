@@ -3,16 +3,16 @@ import path from 'path'
 import readingTime from 'reading-time'
 import matter from 'gray-matter'
 
-import { Posts } from 'src/types/blog-post'
+import { BlogPost } from 'src/types/blog-post'
 
-export const getBlogPosts = async (): Promise<Posts[]> => {
-    const result: Posts[] = []
+export const getBlogPosts = async (): Promise<BlogPost[]> => {
+    const result: BlogPost[] = []
     const dir = path.join(process.cwd(), './posts')
     const blogPosts = await fs.readdir(dir)
 
     await Promise.all(
         blogPosts.map(async (post) => {
-            const postPath = path.join(dir, post, '*.mdx')
+            const postPath = path.join(dir, post)
             const slug = post.replace('.mdx', '')
 
             const fileContent = await fs.readFile(postPath, 'utf8')
@@ -35,7 +35,9 @@ export const getBlogPosts = async (): Promise<Posts[]> => {
     return result.sort((a, b) => Date.parse(b.date) - Date.parse(a.date))
 }
 
-export const getRecentBlogPosts = async (count: number): Promise<Posts[]> => {
+export const getRecentBlogPosts = async (
+    count: number
+): Promise<BlogPost[]> => {
     const posts = await getBlogPosts()
 
     const recentPosts = posts

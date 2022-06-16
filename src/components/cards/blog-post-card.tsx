@@ -10,15 +10,9 @@ import {
 
 import { format } from 'timeago.js'
 
-import { Posts } from '../../types/blog-post'
+import { BlogPost } from '../../types/blog-post'
 
-const BlogPostCard = ({
-    title,
-    description,
-    slug,
-    date,
-    readingTime,
-}: Posts) => {
+const BlogPostCard = ({ title, description, slug, date }: BlogPost) => {
     return (
         <LinkBox as="article">
             <VStack
@@ -55,9 +49,9 @@ const BlogPostCard = ({
                         <Text color="gray.500" fontSize="sm">
                             {format(date)}
                         </Text>
-                        <Text color="gray.500" fontSize="sm">
+                        {/* <Text color="gray.500" fontSize="sm">
                             {readingTime}
-                        </Text>
+                        </Text> */}
                     </HStack>
                 </VStack>
                 <Text color="gray.500" fontSize="sm">

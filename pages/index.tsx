@@ -4,12 +4,10 @@ import Hero from 'src/components/sections/hero'
 import NewsletterForm from 'src/components/newsletter-form/newsletter-form'
 import BlogpostsSection from 'src/components/sections/blogpost-section'
 
-import { Posts } from '../src/types/blog-post'
-
-import Footer from 'src/components/layout/footer'
+import { BlogPost } from '../src/types/blog-post'
 
 type Props = {
-    posts: Posts[]
+    posts: BlogPost[]
 }
 
 const Home = ({ posts }: Props) => {
@@ -22,7 +20,6 @@ const Home = ({ posts }: Props) => {
                 </Box>
 
                 <BlogpostsSection posts={posts} />
-                <Footer />
             </Box>
         </Container>
     )
