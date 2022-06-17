@@ -4,63 +4,63 @@
             "title": "Visual Studio Code",
             "description": "VSC is a go-to when it comes to web development.",
             "url": "https://code.visualstudio.com/",
-            "image": "/assets/images/vsc.svg",
+            "image": "/assets/images/vscode.png",
             "category": "development"
         },
         {
             "title": "Brave",
             "description": "Brave is a chromium web browser with built-in privacy settings. Blocks ads and trackers!",
             "url": "https://brave.com/",
-            "image": "/assets/images/brave.svg",
+            "image": "/assets/images/brave.png",
             "category": "development"
         },
         {
-            "title": "Sizzy",
-            "description": "The browser for developers. It’s a feature rich browser with lots of dev tools.",
-            "url": "https://sizzy.co/",
-            "image": "/assets/images/sizzy.png",
+            "title": "Vivaldi",
+            "description": "Like Brave but more customization. Currently my daily driver.",
+            "url": "https://vivaldi.com",
+            "image": "/assets/images/vivaldi.png",
             "category": "development"
         },
         {
             "title": "Warp",
-            "description": "A super performant terminal.",
+            "description": "A terminal I'm trying out right now as a alternative to Iterm2 .",
             "url": "https://warp.dev/",
             "image": "/assets/images/warp.png",
             "category": "development"
         },
         {
             "title": "Figma",
-            "description": "My #1 design tool. I do all my UI design in Figma.",
+            "description": "I do all my UI design in Figma.",
             "url": "https://figma.com/",
-            "image": "/assets/images/figma.svg",
+            "image": "/assets/images/figma.webp",
             "category": "design"
         },
         {
             "title": "Sip",
-            "description": "This is the coolest color picker.",
+            "description": "Really cool color picker.",
             "url": "https://sipapp.io/",
             "image": "/assets/images/sip.png",
             "category": "design"
         },
         {
-            "title": "Notion",
-            "description": "I believe it’s the most popular note taking app right now.",
-            "url": "https://notion.so/",
-            "image": "/assets/images/notion.svg",
+            "title": "Craft",
+            "description": "I believe it’s one of the best  note taking apps out right now and the most beautifully designed.",
+            "url": "https://www.craft.do",
+            "image": "/assets/images/craft.svg",
             "category": "productivity"
         },
         {
-            "title": "Obsidian",
-            "description": "Obsidian is your Notion alternative, but with more privacy and no backend.",
-            "url": "https://obsidian.md/",
-            "image": "/assets/images/obsidian.svg",
+            "title": "Things",
+            "description": "My favorite to-do app, nice and simple.",
+            "url": "https://culturedcode.com/things/",
+            "image": "/assets/images/things.png",
             "category": "productivity"
         },
         {
             "title": "Raycast",
-            "description": "The fastest Spotlight alternative. Also supports scripting. Recommend!",
+            "description": "Just plain better than Spotlight. Supports scripting and so much more. Just download it and thank me later!",
             "url": "https://www.raycast.com/",
-            "image": "/assets/images/raycast.svg",
+            "image": "/assets/images/raycast.png",
             "category": "productivity"
         },
         {
@@ -73,15 +73,8 @@
         {
             "title": "FinalCut Pro",
             "description": "My video editor of choice.",
-            "url": "http://www.telestream.net/screenflow/overview.htm",
-            "image": "/assets/images/screenflow.png",
-            "category": "video"
-        },
-        {
-            "title": "DaVinci Resolve",
-            "description": "I also use DaVinci Resolve for “heavier” video editing.",
-            "url": "https://www.blackmagicdesign.com/products/davinciresolve/",
-            "image": "/assets/images/davinci.png",
+            "url": "https://www.apple.com/final-cut-pro/",
+            "image": "/assets/images/fcp.png",
             "category": "video"
         }
     ]
