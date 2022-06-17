@@ -61,7 +61,7 @@ export default function Footer() {
                         <Link href={'/'}>Home</Link>
                         <Link href={'/blog'}>Blog</Link>
                         <Link href={'/portfolio'}>Portfolio</Link>
-                        <Link href={'/video archive'}>Video Archive</Link>
+                        <Link href={'/videos'}>Videos</Link>
                         <Link href={'/newsletter'}>Newsletter</Link>
                     </Stack>
                 </SimpleGrid>

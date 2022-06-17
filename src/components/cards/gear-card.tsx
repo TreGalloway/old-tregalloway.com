@@ -51,7 +51,7 @@ const GearCard = ({ image, title, description, url }: Gear) => {
                     <Icon
                         as={FiArrowUpRight}
                         boxSize={6}
-                        color="purple.500"
+                        color="green.500"
                         opacity={0}
                         _groupHover={{ ml: 6, opacity: 1 }}
                         transitionDuration="slow"
