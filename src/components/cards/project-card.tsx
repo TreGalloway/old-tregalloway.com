@@ -13,6 +13,7 @@ import {
 } from '@chakra-ui/react'
 import { FiGithub, FiExternalLink } from 'react-icons/fi'
 import { useMDXComponent } from 'next-contentlayer/hooks'
+import Image from 'next/image'
 // import Link from '../link/link'
 
 type ProjectCardProps = {
@@ -48,12 +49,12 @@ export default function ProjectCard(props: ProjectCardProps) {
                         ></Flex>
                     </Box>
                     {/* <Image
-                        alt={`Homepage of ${title}`}
-                        src={`https://img.youtube.com/vi/${videoId}/hqdefault.jpg`}
-                        fallbackSrc={`https://img.youtube.com/vi/${videoId}/mqdefault.jpg`}
+                        alt={project.title}
+                        src={project.image}
                         layout="fill"
                         objectFit="cover"
                     /> */}
+                    <ProjectImageCard src={project.image} alt={project.title} />
                 </>
             </AspectRatio>
             <VStack alignItems="flex-start" spacing={2}>
@@ -97,5 +98,50 @@ export default function ProjectCard(props: ProjectCardProps) {
                 </HStack>
             </VStack>
         </VStack>
+    )
+}
+
+type ProjectImageCardProps = {
+    src?: string
+    alt: string
+    objectPosition?: string
+}
+
+function ProjectImageCard(props: ProjectImageCardProps) {
+    const { src, alt, objectPosition } = props
+    return (
+        <Box
+            flex={{ md: '1' }}
+            position="relative"
+            height="25rem"
+            width="100%"
+            overflow="hidden"
+            bg="linear-gradient(180deg, #FEB48C 0%, #1EBBFF 100%);"
+            rounded="lg"
+        >
+            <Box
+                position="inherit"
+                top={0.2}
+                width="525px"
+                height="300px"
+                bg="white"
+                rounded="lg"
+                overflow="hidden"
+                boxShadow="xl"
+                sx={{
+                    ' > span': {
+                        transform: 'scale(1.01)',
+                    },
+                }}
+            >
+                <Image
+                    alt={alt}
+                    src={src}
+                    layout="fill"
+                    objectPosition={objectPosition}
+                    objectFit="cover"
+                />
+            </Box>
+        </Box>
     )
 }

@@ -9,7 +9,11 @@ import {
 } from '@chakra-ui/react'
 import { FiArrowUpRight } from 'react-icons/fi'
 
-import { GITHUB_PROFILE, LINKEDIN_PROFILE } from '../../../constants'
+import {
+    GITHUB_PROFILE,
+    LINKEDIN_PROFILE,
+    RESUME_PDF,
+} from '../../../constants'
 import { Link as LinkType } from '../../types/link'
 import HeroImage from '../hero-image/hero-image'
 
@@ -24,6 +28,11 @@ const socialLinks: SocialLink[] = [
     {
         href: GITHUB_PROFILE,
         label: 'GitHub',
+    },
+    {
+        href: RESUME_PDF,
+        label: ' Resume',
+        color: 'green.500',
     },
 ]
 

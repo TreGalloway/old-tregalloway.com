@@ -5,3 +5,5 @@ export const YOUTUBE_CHANNEL =
 export const POLYWORK_PROFILE = 'https://polywork.com/tregalloway'
 export const LINKEDIN_PROFILE = 'https://www.linkedin.com/in/tregalloway/'
 export const INSTAGRAM_PROFILE = 'https://www.instagram.com/bytregalloway/'
+export const RESUME_PDF =
+    'https://drive.google.com/file/d/18QC0RzaSHO_iDj8ti9Yv4xriklyCvkpe/view?usp=sharing'

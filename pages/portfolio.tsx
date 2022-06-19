@@ -1,4 +1,11 @@
-import { Heading, SimpleGrid, GridItem, VStack } from '@chakra-ui/react'
+import {
+    Heading,
+    SimpleGrid,
+    GridItem,
+    VStack,
+    Divider,
+    Box,
+} from '@chakra-ui/react'
 
 import { Project } from '../src/types/project'
 import PortfolioHero from '@/components/sections/portfolio-hero'
@@ -16,6 +23,7 @@ const Portfolio = ({ projects }: Props) => {
             <Heading size="lg">Portfolio.</Heading>
             <PortfolioHero />
             <Skills />
+            <Box p={4}></Box>
             <PortfolioSection />
         </VStack>
     )
