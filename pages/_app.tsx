@@ -28,7 +28,7 @@ const App = ({ Component, pageProps }: AppProps) => {
                     locale: 'en_US',
                     images: [
                         {
-                            url: 'https://tregalloway.com/assets/images/social.png',
+                            url: 'https://github.com/TreGalloway/my-website/blob/ba944098f4a1d6b04ab95ca8153b80500712dc80/public/assets/images/social.png',
                             width: 1200,
                             height: 630,
                             alt: 'Tre Galloway',
