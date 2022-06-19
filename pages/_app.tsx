@@ -14,7 +14,7 @@ const App = ({ Component, pageProps }: AppProps) => {
     return (
         <ChakraProvider theme={theme}>
             <NextSeo
-                title="Tre Galloway - Developer, content creator."
+                title="Tre Galloway - Developer, Content Creator."
                 description="Front-End React Developer, Blog Writer and YouTube Content Creator."
                 twitter={{
                     cardType: 'summary_large_image',
@@ -28,7 +28,7 @@ const App = ({ Component, pageProps }: AppProps) => {
                     locale: 'en_US',
                     images: [
                         {
-                            url: 'https://nikolovlazar.com/assets/images/social.png',
+                            url: 'https://tregalloway.com/assets/images/social.png',
                             width: 1200,
                             height: 630,
                             alt: 'Tre Galloway',
