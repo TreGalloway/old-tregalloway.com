@@ -10,7 +10,6 @@ const ChakraLink = React.forwardRef<HTMLAnchorElement, any>(function ChakraLink(
     return (
         <chakra.a
             ref={ref}
-            color="white"
             fontWeight={'semibold'}
             textDecor="underline"
             textUnderlineOffset={'2px'}
@@ -34,7 +33,14 @@ const CustomLink = (props: any) => {
         )
     }
 
-    return <ChakraLink target="_blank" rel="noopener noreferrer" {...props} />
+    return (
+        <ChakraLink
+            target="_blank"
+            rel="noopener noreferrer"
+            color={'green.500'}
+            {...props}
+        />
+    )
 }
 
 const MDXComponents: Record<string, React.FC<any>> = {
@@ -62,7 +68,6 @@ const MDXComponents: Record<string, React.FC<any>> = {
                 fontFamily="heading"
                 fontWeight="semibold"
                 marginTop="8"
-                color="gray.300"
                 marginBottom="4"
                 {...props}
             />
@@ -76,7 +81,6 @@ const MDXComponents: Record<string, React.FC<any>> = {
                 fontFamily="heading"
                 fontWeight="semibold"
                 marginTop="8"
-                color="gray.300"
                 marginBottom="4"
                 {...props}
             />
@@ -85,13 +89,14 @@ const MDXComponents: Record<string, React.FC<any>> = {
     blockquote(props) {
         return (
             <chakra.blockquote
-                color="white"
-                marginY="8"
                 paddingX="6"
                 paddingY="4"
-                rounded="lg"
-                bg="dust.dark"
-                sx={{ borderLeft: '2px solid', borderColor: 'sage.base' }}
+                rounded="md"
+                bg="gray.50"
+                _dark={{
+                    bg: 'gray.700',
+                }}
+                sx={{ borderLeft: '4px solid' }}
                 {...props}
             />
         )
@@ -108,7 +113,10 @@ const MDXComponents: Record<string, React.FC<any>> = {
         if (typeof props.children === 'string') {
             return (
                 <chakra.code
-                    color="sage.base"
+                    bg="gray.50"
+                    _dark={{
+                        bg: 'gray.700',
+                    }}
                     rounded="sm"
                 >{`\`${props.children}\``}</chakra.code>
             )
@@ -116,7 +124,7 @@ const MDXComponents: Record<string, React.FC<any>> = {
         return <code {...props} />
     },
     strong(props) {
-        return <chakra.strong fontWeight="semibold" color="white" {...props} />
+        return <chakra.strong fontWeight="semibold" {...props} />
     },
     table(props) {
         return (

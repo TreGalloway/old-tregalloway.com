@@ -4,6 +4,11 @@ import {
     ComputedFields,
 } from 'contentlayer/source-files'
 import readingTime from 'reading-time'
+import rehypeAutolinkHeadings from 'rehype-autolink-headings'
+import rehypeCodeTitles from 'rehype-code-titles'
+import rehypePrism from 'rehype-prism-plus'
+import rehypeSlug from 'rehype-slug'
+import remarkGfm from 'remark-gfm'
 
 const computedFields: ComputedFields = {
     readingTime: {
@@ -65,7 +70,21 @@ export default makeSource({
     contentDirPath: 'content',
     documentTypes: [Post, Project],
     mdx: {
-        remarkPlugins: [],
-        rehypePlugins: [],
+        remarkPlugins: [remarkGfm],
+        rehypePlugins: [
+            rehypeSlug,
+            rehypeCodeTitles,
+            rehypePrism,
+            [
+                rehypeAutolinkHeadings,
+                {
+                    behavior: 'append',
+                    test: ['h2', 'h3', 'h4', 'h5', 'h6'],
+                    properties: {
+                        className: ['anchor'],
+                    },
+                },
+            ],
+        ],
     },
 })

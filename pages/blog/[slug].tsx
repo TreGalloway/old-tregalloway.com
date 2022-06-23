@@ -5,6 +5,7 @@ import { useMDXComponent } from 'next-contentlayer/hooks'
 import type { GetStaticPaths, GetStaticProps } from 'next'
 import MDXComponents from '@/components/mdx-component/mdx-components'
 import { format } from 'timeago.js'
+import formatDate from '@/utils/format-date'
 import { chakra } from '@chakra-ui/system'
 import ScrollToTopButton from '../../src/components/scroll-to-top-button/scroll-to-top-button'
 import NewsletterForm from '../../src/components/newsletter-form/newsletter-form'
@@ -13,6 +14,8 @@ export default function Blog({ post }: { post: Post }) {
     const title = `${post.title} — Tre Galloway`
     // Get MDX component for post
     const Component = useMDXComponent(post.body.code)
+    const date = formatDate(post.date)
+
     return (
         <>
             <NextSeo title={title} description={post.description} />
@@ -28,19 +31,21 @@ export default function Blog({ post }: { post: Post }) {
                     </Heading>
                     <HStack
                         divider={
-                            <Text mx={2} color="gray.500">
+                            <Text mx={2} color="gray.400">
                                 •
                             </Text>
                         }
                     >
-                        <Text color="gray.500" fontSize="sm">
-                            {format(post.date)}
+                        <Text color="gray.400" fontSize="sm">
+                            {/* {format(post.date)} */}{' '}
+                            <time dateTime={date.iso}>{date.pretty}</time>
                         </Text>
+
                         {/* <Text color="gray.500" fontSize="sm">
                             {views ?? <Spinner color="gray.500" size="xs" />}{' '}
                             views
                         </Text> */}
-                        <Text color="gray.500" fontSize="sm">
+                        <Text color="gray.400" fontSize="sm">
                             <chakra.span>{post.readingTime.text}</chakra.span>
                         </Text>
                     </HStack>
