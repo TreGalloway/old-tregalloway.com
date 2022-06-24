@@ -73,10 +73,10 @@ export const searchItems: SearchItemsType = {
         //     title: 'Bookmarks',
         //     href: '/bookmarks',
         // },
-        // {
-        //     title: 'Books',
-        //     href: '/books',
-        // },
+        {
+            title: 'Books',
+            href: '/books',
+        },
         {
             title: 'Newsletter',
             href: '/newsletter',

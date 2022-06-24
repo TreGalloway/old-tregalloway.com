@@ -9,6 +9,10 @@ import rehypeCodeTitles from 'rehype-code-titles'
 import rehypePrism from 'rehype-prism-plus'
 import rehypeSlug from 'rehype-slug'
 import remarkGfm from 'remark-gfm'
+import { remarkCodeHike } from '@code-hike/mdx'
+import { createRequire } from 'module'
+const require = createRequire(import.meta.url)
+const theme = require('shiki/themes/one-dark-pro.json')
 
 const computedFields: ComputedFields = {
     readingTime: {
@@ -70,11 +74,17 @@ export default makeSource({
     contentDirPath: 'content',
     documentTypes: [Post, Project],
     mdx: {
-        remarkPlugins: [remarkGfm],
+        remarkPlugins: [
+            remarkGfm,
+            [
+                remarkCodeHike,
+                { theme, lineNumbers: true, showCopyButton: true },
+            ],
+        ],
         rehypePlugins: [
             rehypeSlug,
             rehypeCodeTitles,
-            rehypePrism,
+            // rehypePrism,
             [
                 rehypeAutolinkHeadings,
                 {

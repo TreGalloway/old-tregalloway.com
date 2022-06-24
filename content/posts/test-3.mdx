@@ -2,6 +2,7 @@
 title: Content Layer Tutorial 3
 description: To understand how nextjs transform markdown to html, you need to know a bit more about how contentlayer works.
 date: 2022-02-05
+featured: true
 ---
 
 If you’re looking to build a website using Nextjs and MDX files you’ve come to the right place.
@@ -20,6 +21,17 @@ I'm looking forward to seeing the adoption of Content Layer as it will be on sta
 
 ## Heading
 
-```jsx
-const hello = 'Hello World'
+```tsx SandpackEmbed.tsx
+<SandpackEmbed
+    options={{
+        editorHeight: 600,
+        editorWidthPercentage: 60,
+    }}
+    files={{
+        '/src/App.tsx': App,
+        '/src/index.tsx': Index,
+    }}
+    zIndex={0}
+    tabIndex={-1}
+/>
 ```

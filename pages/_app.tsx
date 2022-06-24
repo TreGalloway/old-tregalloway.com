@@ -7,6 +7,8 @@ import theme from '../src/theme/theme'
 import Layout from '../src/components/layout/layout'
 import CmdPalette from '../src/components/cmd-palete/command-index'
 import CmdPaletteProvider from 'src/providers/cmd-palette-provider'
+// import '../styles/prism.css'
+import '@code-hike/mdx/dist/index.css'
 
 // import '/Users/tre/tregalloway.com/styles/style.css'
 

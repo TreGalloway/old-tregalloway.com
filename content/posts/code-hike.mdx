@@ -1,0 +1,44 @@
+---
+title: Code Hike
+description: Trying out code hike
+date: 2022-02-05
+cover: https://images.unsplash.com/photo-1564865878688-9a244444042a?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=2940&q=80
+featured: true
+---
+
+# Just testing out [Code Hike](https://codehike.org/)
+
+Some normal `markdown`
+
+## Annotation Example
+
+```js index.js box=1[25:39]
+console.log('Some code. I am annotated!')
+```
+
+## Focus Example
+
+```js next.config.js focus=1:2,7
+const { remarkCodeHike } = require('@code-hike/mdx')
+const theme = require('shiki/themes/monokai.json')
+
+const withMDX = require('@next/mdx')({
+    extension: /\.mdx?$/,
+    options: {
+        remarkPlugins: [[remarkCodeHike, { theme }]],
+        rehypePlugins: [],
+    },
+})
+
+module.exports = withMDX({
+    pageExtensions: ['ts', 'tsx', 'js', 'jsx', 'md', 'mdx'],
+})
+```
+
+<CH.Section>
+
+## Code Links Example
+
+We are looking at the [console.log](focus://console.js#2) function today
+
+</CH.Section>

@@ -4,7 +4,8 @@ import { VStack, Heading, HStack, Text, Divider } from '@chakra-ui/react'
 import { useMDXComponent } from 'next-contentlayer/hooks'
 import type { GetStaticPaths, GetStaticProps } from 'next'
 import MDXComponents from '@/components/mdx-component/mdx-components'
-import { format } from 'timeago.js'
+// import { format } from 'timeago.js'
+// import Image from 'next/image'
 import formatDate from '@/utils/format-date'
 import { chakra } from '@chakra-ui/system'
 import ScrollToTopButton from '../../src/components/scroll-to-top-button/scroll-to-top-button'
@@ -15,6 +16,7 @@ export default function Blog({ post }: { post: Post }) {
     // Get MDX component for post
     const Component = useMDXComponent(post.body.code)
     const date = formatDate(post.date)
+    const image = post.cover
 
     return (
         <>
@@ -49,6 +51,13 @@ export default function Blog({ post }: { post: Post }) {
                             <chakra.span>{post.readingTime.text}</chakra.span>
                         </Text>
                     </HStack>
+                    {/* <Image
+                        src={image}
+                        alt={post.title}
+                        layout="fill"
+                        objectFit="cover"
+                        priority
+                    /> */}
                 </VStack>
                 <Component components={MDXComponents} />
                 <Divider />

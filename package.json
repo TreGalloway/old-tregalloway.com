@@ -11,9 +11,12 @@
     "dependencies": {
         "@chakra-ui/icons": "^2.0.1",
         "@chakra-ui/react": "^2.1.2",
+        "@code-hike/mdx": "^0.6.1-next.0",
         "@emotion/react": "^11.9.0",
         "@emotion/styled": "^11.8.1",
-        "@mdx-js/react": "^2.1.1",
+        "@mdx-js/loader": "^2.0.0-rc.2",
+        "@mdx-js/react": "^2.0.0-rc.2",
+        "@next/mdx": "^12.1.6",
         "contentlayer": "^0.2.5",
         "esbuild": "^0.14.43",
         "framer-motion": "^6.3.4",
