@@ -1,6 +1,8 @@
 import { AppProps } from 'next/app'
 import { ChakraProvider } from '@chakra-ui/react'
 import { NextSeo } from 'next-seo'
+import Head from 'next/head'
+
 // import 'cal-sans'
 
 import theme from '../src/theme/theme'
@@ -16,21 +18,27 @@ const App = ({ Component, pageProps }: AppProps) => {
     return (
         <ChakraProvider theme={theme}>
             <NextSeo
-                title="Tre Galloway - Developer, Content Creator."
+                title="Tre Galloway - Developer & Content Creator."
                 description="Front-End React Developer, Blog Writer and YouTube Content Creator."
                 twitter={{
                     cardType: 'summary_large_image',
                     handle: '@ByTreGalloway',
                 }}
+                // additionalLinkTags={[
+                //     {
+                //         rel: 'icon',
+                //         href: 'public/favicon.ico',
+                //     },
+                // ]}
                 openGraph={{
                     url: 'https://tregalloway.com',
-                    title: 'Tre Galloway - Developer, content creator.',
+                    title: 'Tre Galloway - Developer & Content Creator.',
                     description:
                         'Front-End React Developer, Blog Writer and YouTube Content Creator.',
                     locale: 'en_US',
                     images: [
                         {
-                            url: 'https://github.com/TreGalloway/my-website/blob/ba944098f4a1d6b04ab95ca8153b80500712dc80/public/assets/images/social.png',
+                            url: 'https://tregalloway.com/assets/images/social.png',
                             width: 1200,
                             height: 630,
                             alt: 'Tre Galloway',

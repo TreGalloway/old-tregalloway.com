@@ -69,10 +69,26 @@ const Project = defineDocumentType(() => ({
     },
     computedFields,
 }))
+const Book = defineDocumentType(() => ({
+    name: 'Book',
+    filePathPattern: 'books/*.mdx',
+    contentType: 'mdx',
+    fields: {
+        title: { type: 'string', required: true },
+        author: { type: 'string', required: true },
+        description: { type: 'string' },
+        link: { type: 'string' },
+        status: { type: 'string' },
+        category: { type: 'string' },
+        image: { type: 'string' },
+        tags: { type: 'list', of: { type: 'string' } },
+    },
+    computedFields,
+}))
 export default makeSource({
     // Location of source files for all defined documentTypes
     contentDirPath: 'content',
-    documentTypes: [Post, Project],
+    documentTypes: [Post, Project, Book],
     mdx: {
         remarkPlugins: [
             remarkGfm,

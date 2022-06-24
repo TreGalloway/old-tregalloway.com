@@ -1,6 +1,6 @@
 const status = {
-    emoji: '🤯',
-    text: 'Listening to The Precipice',
+    emoji: '🤐',
+    text: 'Reading Quiet by Susan Cain',
 }
 
 export default status

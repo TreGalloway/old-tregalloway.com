@@ -62,10 +62,10 @@ const NewsletterForm = () => {
             rounded="md"
             spacing={3}
         >
-            <Heading size="md">Subscribe to my newsletter ✉️</Heading>
+            <Heading size="md">Subscribe to The Sit Down 📩</Heading>
             <Text>
-                Get emails from me about web development, content creation, and
-                whenever I publish new content.
+                Twice a month (bi-weekly) I sit down and share my thoughts,
+                challenges, project updates, and favorite content.
             </Text>
             {form.state !== Form.Success && form.state !== Form.Error && (
                 <>
