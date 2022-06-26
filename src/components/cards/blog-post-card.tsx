@@ -10,14 +10,16 @@ import {
 
 import { format } from 'timeago.js'
 
-import { BlogPost } from '../../types/blog-post'
+// import { BlogPost } from '../../types/blog-post'
+import { Post } from 'contentlayer/generated'
 
-const BlogPostCard = ({
-    title,
-    description,
-    slug,
-    datePublished,
-}: BlogPost) => {
+type BlogCardProps = {
+    data: Post
+}
+
+const BlogPostCard = (props: BlogCardProps) => {
+    const { data: post } = props
+
     return (
         <LinkBox as="article">
             <VStack
@@ -39,9 +41,9 @@ const BlogPostCard = ({
                 transitionTimingFunction="ease-out"
             >
                 <VStack alignItems="flex-start">
-                    <Link href={`/blog/${slug}`} passHref>
+                    <Link href={`/blog/${post.slug}`} passHref>
                         <LinkOverlay>
-                            <Heading size="md">{title}</Heading>
+                            <Heading size="md">{post.title}</Heading>
                         </LinkOverlay>
                     </Link>
                     <HStack
@@ -52,7 +54,7 @@ const BlogPostCard = ({
                         }
                     >
                         <Text color="gray.500" fontSize="sm">
-                            {format(datePublished)}
+                            {format(post.datePublished)}
                         </Text>
                         {/* <Text color="gray.500" fontSize="sm">
                             {readingTime}
@@ -60,7 +62,7 @@ const BlogPostCard = ({
                     </HStack>
                 </VStack>
                 <Text color="gray.500" fontSize="sm">
-                    {description}
+                    {post.description}
                 </Text>
             </VStack>
         </LinkBox>

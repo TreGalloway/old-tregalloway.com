@@ -66,7 +66,7 @@ const Blog: NextPage<InferGetStaticPropsType<typeof getStaticProps>> = ({
             <List w="full" spacing={2}>
                 {displayPosts.map((post) => (
                     <ListItem key={post.slug}>
-                        <BlogPostCard {...post} />
+                        <BlogPostCard key={post.title} data={post} />
                     </ListItem>
                 ))}
             </List>
