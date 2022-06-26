@@ -12,7 +12,7 @@ export default function BlogpostsSection() {
             <List w="full" spacing={{ base: 8, md: 2 }}>
                 {allFeaturedPosts.map((post) => (
                     <ListItem key={post.slug}>
-                        <BlogPostCard {...post} />
+                        <BlogPostCard key={post.title} data={post} />
                     </ListItem>
                 ))}
             </List>
