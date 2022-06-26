@@ -1,6 +1,6 @@
 import { AppProps } from 'next/app'
 import { ChakraProvider } from '@chakra-ui/react'
-import { NextSeo } from 'next-seo'
+import { NextSeo, SocialProfileJsonLd } from 'next-seo'
 import Head from 'next/head'
 
 // import 'cal-sans'
@@ -19,22 +19,19 @@ const App = ({ Component, pageProps }: AppProps) => {
         <ChakraProvider theme={theme}>
             <NextSeo
                 title="Tre Galloway - Developer & Content Creator."
-                description="Front-End React Developer, Blog Writer and YouTube Content Creator."
+                titleTemplate="Tre Galloway | Developer & Creator"
+                description="I'm Tre Galloway. Developer, Content Creator and maybe one day a author. I explore different conepts around personal development and share thing I learn on web development."
                 twitter={{
                     cardType: 'summary_large_image',
-                    handle: '@ByTreGalloway',
+                    handle: '@bytregalloway',
+                    site: 'https://twitter.com/bytregalloway',
                 }}
-                // additionalLinkTags={[
-                //     {
-                //         rel: 'icon',
-                //         href: 'public/favicon.ico',
-                //     },
-                // ]}
+                robotsProps={{}}
                 openGraph={{
                     url: 'https://tregalloway.com',
                     title: 'Tre Galloway - Developer & Content Creator.',
                     description:
-                        'Front-End React Developer, Blog Writer and YouTube Content Creator.',
+                        "I'm Tre Galloway. Developer, Content Creator and maybe one day a author. I explore different conepts around personal development and share thing I learn on web development.",
                     locale: 'en_US',
                     images: [
                         {
@@ -46,6 +43,17 @@ const App = ({ Component, pageProps }: AppProps) => {
                         },
                     ],
                 }}
+            />
+            <SocialProfileJsonLd
+                type="Person"
+                name="Tre Galloway"
+                url="http://www.tregalloway.com"
+                sameAs={[
+                    'http://instagram.com/bytregalloway',
+                    'http://www.linkedin.com/in/tregalloway',
+                    'https://twitter.com/bytregalloway',
+                    'https://www.youtube.com/channel/UCRQPGu1zovYhIdP86WCTKLw',
+                ]}
             />
             <CmdPaletteProvider>
                 <Layout>

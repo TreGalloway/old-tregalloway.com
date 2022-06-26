@@ -19,8 +19,6 @@ import {
 import { NextSeo } from 'next-seo'
 import { HiOutlineSearch } from 'react-icons/hi'
 
-import { BlogPost } from '@/types/blog-post'
-import { getBlogPosts } from '@/utils/get-blog-posts'
 import BlogPostCard from '../src/components/cards/blog-post-card'
 import { allPosts, Post } from 'contentlayer/generated'
 
