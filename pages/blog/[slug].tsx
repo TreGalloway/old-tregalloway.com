@@ -77,15 +77,18 @@ export default function Blog({ post }: { post: Post }) {
                         }
                     >
                         <Text color="gray.400" fontSize="sm">
-                            {/* {format(post.date)} */} Published | {''}
+                            Published on {''}
                             <time dateTime={date.iso}>{date.pretty}</time>
+                        </Text>
+                        <Text color="gray.400" fontSize="sm">
+                            By {post.author}
                         </Text>
 
                         {/* <Text color="gray.500" fontSize="sm">
                             {views ?? <Spinner color="gray.500" size="xs" />}{' '}
                             views
                         </Text> */}
-                        <Text color="gray.400" fontSize="sm">
+                        <Text color="gray.400" fontSize="sm" as="i">
                             <chakra.span>{post.readingTime.text}</chakra.span>
                         </Text>
                     </HStack>

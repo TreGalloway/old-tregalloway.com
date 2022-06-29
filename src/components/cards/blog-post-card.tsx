@@ -5,6 +5,7 @@ import {
     Heading,
     Text,
     VStack,
+    chakra,
     HStack,
 } from '@chakra-ui/react'
 
@@ -56,9 +57,9 @@ const BlogPostCard = (props: BlogCardProps) => {
                         <Text color="gray.500" fontSize="sm">
                             {format(post.datePublished)}
                         </Text>
-                        {/* <Text color="gray.500" fontSize="sm">
-                            {readingTime}
-                        </Text> */}
+                        <Text color="gray.500" fontSize="sm">
+                            <chakra.span>{post.readingTime.text}</chakra.span>
+                        </Text>
                     </HStack>
                 </VStack>
                 <Text color="gray.500" fontSize="sm">
