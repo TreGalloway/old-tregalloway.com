@@ -6,7 +6,6 @@ import {
     GridItem,
     HStack,
 } from '@chakra-ui/react'
-import { allBooks, Book } from 'contentlayer/generated'
 import {
     allReadBooks,
     allReadingBooks,
@@ -15,6 +14,7 @@ import {
 } from '../src/utils/contetnlayer'
 import BookCard from '@/components/cards/book-card'
 import { TbCheckbox, TbCoffee, TbClock, TbStar } from 'react-icons/tb'
+import ScrollToTopButton from '@/components/scroll-to-top-button/scroll-to-top-button'
 
 export default function Books() {
     return (
@@ -115,6 +115,7 @@ export default function Books() {
                     ))}
                 </SimpleGrid>
             </VStack>
+            <ScrollToTopButton />
         </VStack>
     )
 }

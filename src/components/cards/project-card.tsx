@@ -14,7 +14,6 @@ import {
 import { FiGithub, FiExternalLink } from 'react-icons/fi'
 import { useMDXComponent } from 'next-contentlayer/hooks'
 import Image from 'next/image'
-// import Link from '../link/link'
 
 type ProjectCardProps = {
     data: Project

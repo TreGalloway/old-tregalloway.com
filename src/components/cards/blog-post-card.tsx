@@ -11,7 +11,6 @@ import {
 
 import { format } from 'timeago.js'
 
-// import { BlogPost } from '../../types/blog-post'
 import { Post } from 'contentlayer/generated'
 
 type BlogCardProps = {

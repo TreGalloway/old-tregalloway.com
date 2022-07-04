@@ -9,7 +9,6 @@ import {
     AspectRatio,
     Icon,
     useBreakpointValue,
-    SkeletonCircle,
 } from '@chakra-ui/react'
 import { FiArrowUpRight } from 'react-icons/fi'
 

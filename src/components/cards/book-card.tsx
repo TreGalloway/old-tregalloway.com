@@ -14,10 +14,6 @@ import { Book } from 'contentlayer/generated'
 import Image from '../image/image'
 import Link from 'next/link'
 import { TbNotes, TbLink } from 'react-icons/tb'
-// import Image from 'next/image'
-
-// import { Book as BookType } from '@/types/book'
-// import Tag from './tag'
 
 type BookCardProps = {
     data: Book
@@ -25,8 +21,7 @@ type BookCardProps = {
 
 export default function BookCard(props: BookCardProps) {
     const { data: book } = props
-    // const image = `${book.image}`
-    // const alt = `${book.title} image`
+
     return (
         <LinkBox as="article">
             <VStack
@@ -40,10 +35,6 @@ export default function BookCard(props: BookCardProps) {
                 transitionTimingFunction="ease-out"
             >
                 <Box position="relative" flexShrink={0}>
-                    {/* <BookImageCard
-                        src={book.image}
-                        alt={`${book.title} image`}
-                    /> */}
                     <Image
                         src={book.image}
                         alt={`${book.title} image`}
@@ -68,7 +59,7 @@ export default function BookCard(props: BookCardProps) {
                 </VStack>
                 <HStack>
                     <Link href={`/books/${book.slug}`} passHref>
-                        <Button bg={'blue.500'}>
+                        <Button bg={'blue.400'}>
                             <TbNotes /> Notes.
                         </Button>
                     </Link>
@@ -77,7 +68,7 @@ export default function BookCard(props: BookCardProps) {
                         href={book.link}
                         rel="noopener noreferrer"
                     >
-                        <Button bg={'orange.400'}>
+                        <Button bg={'orange.300'}>
                             <TbLink /> Amazon.
                         </Button>
                     </a>
@@ -85,24 +76,4 @@ export default function BookCard(props: BookCardProps) {
             </VStack>
         </LinkBox>
     )
-
-    type BookImageCardProps = {
-        src?: string
-        alt: string
-    }
-
-    function BookImageCard(props: BookImageCardProps) {
-        const { src, alt } = props
-        return (
-            <Box
-                position="relative"
-                height={83}
-                width={55}
-                objectFit="cover"
-                rounded="base"
-            >
-                <Image alt={alt} src={src} layout="fill" objectFit="cover" />
-            </Box>
-        )
-    }
 }
