@@ -1,7 +1,20 @@
-import { GetStaticProps } from 'next'
-import { Heading, VStack, Text, SimpleGrid } from '@chakra-ui/react'
+import {
+    Heading,
+    VStack,
+    Text,
+    SimpleGrid,
+    GridItem,
+    HStack,
+} from '@chakra-ui/react'
 import { allBooks, Book } from 'contentlayer/generated'
+import {
+    allReadBooks,
+    allReadingBooks,
+    allFavBooks,
+    allNextBooks,
+} from '../src/utils/contetnlayer'
 import BookCard from '@/components/cards/book-card'
+import { TbCheckbox, TbCoffee, TbClock, TbStar } from 'react-icons/tb'
 
 export default function Books() {
     return (
@@ -15,44 +28,91 @@ export default function Books() {
             </VStack>
 
             <VStack alignItems="flex-start" w="full" spacing={4}>
-                <Heading size="sm">Reading.</Heading>
+                <HStack>
+                    <Text color="yellow.500">
+                        <TbStar />
+                    </Text>
+
+                    <Heading size="sm">Favorites.</Heading>
+                </HStack>
                 <SimpleGrid
                     as="section"
                     gap={3}
                     w="full"
                     columns={{ base: 1, md: 2 }}
                 >
-                    {/* {reading.map((book) => (
-                        <BookCard key={book.id} book={book} />
-                    ))} */}
+                    {allFavBooks.map((book) => (
+                        <GridItem key={book.title} as="article">
+                            <BookCard key={book.title} data={book} />
+                        </GridItem>
+                    ))}
                 </SimpleGrid>
             </VStack>
 
             <VStack alignItems="flex-start" w="full" spacing={4}>
-                <Heading size="sm">Read.</Heading>
+                <HStack>
+                    <Text color="purple.300">
+                        <TbCoffee />
+                    </Text>
+
+                    <Heading size="sm">Reading.</Heading>
+                </HStack>
+
                 <SimpleGrid
                     as="section"
                     gap={3}
                     w="full"
                     columns={{ base: 1, md: 2 }}
                 >
-                    {/* {[...favorites, ...completed].map((book) => (
-                        <Book key={book.id} book={book} />
-                    ))} */}
+                    {allReadingBooks.map((book) => (
+                        <GridItem key={book.title} as="article">
+                            <BookCard key={book.title} data={book} />
+                        </GridItem>
+                    ))}
+                </SimpleGrid>
+            </VStack>
+            <VStack alignItems="flex-start" w="full" spacing={4}>
+                <HStack>
+                    <Text color={'green.400'}>
+                        <TbCheckbox />
+                    </Text>
+
+                    <Heading size="sm">Read.</Heading>
+                </HStack>
+
+                <SimpleGrid
+                    as="section"
+                    gap={3}
+                    w="full"
+                    columns={{ base: 1, md: 2 }}
+                >
+                    {allReadBooks.map((book) => (
+                        <GridItem key={book.title} as="article">
+                            <BookCard key={book.title} data={book} />
+                        </GridItem>
+                    ))}
                 </SimpleGrid>
             </VStack>
 
             <VStack alignItems="flex-start" w="full" spacing={4}>
-                <Heading size="sm">Next.</Heading>
+                <HStack>
+                    <Text color={'blue.400'}>
+                        <TbClock />
+                    </Text>
+
+                    <Heading size="sm">Next.</Heading>
+                </HStack>{' '}
                 <SimpleGrid
                     as="section"
                     gap={3}
                     w="full"
                     columns={{ base: 1, md: 2 }}
                 >
-                    {/* {wishing.map((book) => (
-                        <Book key={book.id} book={book} />
-                    ))} */}
+                    {allNextBooks.map((book) => (
+                        <GridItem key={book.title} as="article">
+                            <BookCard key={book.title} data={book} />
+                        </GridItem>
+                    ))}
                 </SimpleGrid>
             </VStack>
         </VStack>

@@ -48,12 +48,7 @@ export default function ProjectCard(props: ProjectCardProps) {
                             transitionTimingFunction="ease-out"
                         ></Flex>
                     </Box>
-                    {/* <Image
-                        alt={project.title}
-                        src={project.image}
-                        layout="fill"
-                        objectFit="cover"
-                    /> */}
+
                     <ProjectImageCard src={project.image} alt={project.title} />
                 </>
             </AspectRatio>

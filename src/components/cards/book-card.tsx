@@ -3,6 +3,7 @@ import {
     Heading,
     Text,
     Box,
+    Button,
     VStack,
     LinkOverlay,
     LinkBox,
@@ -11,8 +12,10 @@ import {
 
 import { Book } from 'contentlayer/generated'
 import Image from '../image/image'
+import Link from 'next/link'
+import { TbNotes, TbLink } from 'react-icons/tb'
+// import Image from 'next/image'
 
-// import Image from '@/components/image'
 // import { Book as BookType } from '@/types/book'
 // import Tag from './tag'
 
@@ -22,7 +25,8 @@ type BookCardProps = {
 
 export default function BookCard(props: BookCardProps) {
     const { data: book } = props
-
+    // const image = `${book.image}`
+    // const alt = `${book.title} image`
     return (
         <LinkBox as="article">
             <VStack
@@ -36,20 +40,18 @@ export default function BookCard(props: BookCardProps) {
                 transitionTimingFunction="ease-out"
             >
                 <Box position="relative" flexShrink={0}>
-                    {/* <Image
-                        src={cover}
-                        alt={`${title} cover`}
+                    {/* <BookImageCard
+                        src={book.image}
+                        alt={`${book.title} image`}
+                    /> */}
+                    <Image
+                        src={book.image}
+                        alt={`${book.title} image`}
                         height={83}
                         width={55}
                         objectFit="cover"
-                        rounded="base"
-                    /> */}
-                    {/* <Tag
-                        state={state}
-                        top={-2.5}
-                        right={-2.5}
-                        position="absolute"
-                    /> */}
+                        rounded={'base'}
+                    />
                 </Box>
                 <VStack
                     alignItems="flex-start"
@@ -64,7 +66,43 @@ export default function BookCard(props: BookCardProps) {
                         {book.author}
                     </Text>
                 </VStack>
+                <HStack>
+                    <Link href={`/books/${book.slug}`} passHref>
+                        <Button bg={'blue.500'}>
+                            <TbNotes /> Notes.
+                        </Button>
+                    </Link>
+                    <a
+                        target="_blank"
+                        href={book.link}
+                        rel="noopener noreferrer"
+                    >
+                        <Button bg={'orange.400'}>
+                            <TbLink /> Amazon.
+                        </Button>
+                    </a>
+                </HStack>
             </VStack>
         </LinkBox>
     )
+
+    type BookImageCardProps = {
+        src?: string
+        alt: string
+    }
+
+    function BookImageCard(props: BookImageCardProps) {
+        const { src, alt } = props
+        return (
+            <Box
+                position="relative"
+                height={83}
+                width={55}
+                objectFit="cover"
+                rounded="base"
+            >
+                <Image alt={alt} src={src} layout="fill" objectFit="cover" />
+            </Box>
+        )
+    }
 }

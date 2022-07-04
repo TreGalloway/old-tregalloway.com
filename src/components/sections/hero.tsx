@@ -71,21 +71,6 @@ const Hero = () => {
                     ecosystem (Typescript,NextJS). I also create content on
                     <strong> personal development</strong> and{' '}
                     <strong>coding</strong> .
-                    {/*  I work at{' '}
-                    <ExternalLink href="https://codechem.com">
-                        CodeChem
-                    </ExternalLink>{' '}
-                    as a <strong>developer/designer</strong>, and I’m a{' '}
-                    <strong>core member</strong> at{' '}
-                    <ExternalLink href="https://chakra-ui.com">
-                        Chakra UI
-                    </ExternalLink>
-                    , contributing as a <strong>Developer Advocate</strong>. I’m
-                    also an{' '}
-                    <ExternalLink href="https://egghead.io">
-                        egghead.io
-                    </ExternalLink>{' '}
-                    <strong>instructor</strong>. */}
                 </Text>
                 <Stack direction={{ base: 'column', md: 'row' }} spacing={3}>
                     {socialLinks.map(({ href, label, color }) => (
