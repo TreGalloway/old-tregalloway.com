@@ -1,5 +1,6 @@
 import { chakra } from '@chakra-ui/react'
-import Image from 'next/image'
+// import Image from 'next/image'
+import Image from '../image/image'
 import Link from 'next/link'
 import React from 'react'
 
@@ -45,6 +46,17 @@ const CustomLink = (props: any) => {
 
 const MDXComponents: Record<string, React.FC<any>> = {
     a: CustomLink,
+    // caption(props) {
+    //     return (
+    //         <chakra.text
+    //             as="u"
+    //             color={'gray.400'}
+    //             paddingStart="3"
+    //             fontSize={'md'}
+    //             {...props}
+    //         />
+    //     )
+    // },
     ul(props) {
         return <chakra.ul paddingStart="4" marginY="5" {...props} />
     },

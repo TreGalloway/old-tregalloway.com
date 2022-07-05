@@ -7,13 +7,7 @@
             "image": "/assets/images/vscode.png",
             "category": "development"
         },
-        {
-            "title": "Brave",
-            "description": "Brave is a chromium web browser with built-in privacy settings. Blocks ads and trackers!",
-            "url": "https://brave.com/",
-            "image": "/assets/images/brave.png",
-            "category": "development"
-        },
+
         {
             "title": "Vivaldi",
             "description": "Like Brave but more customization. Currently my daily driver.",
@@ -43,10 +37,10 @@
             "category": "design"
         },
         {
-            "title": "Craft",
-            "description": "I believe it’s one of the best  note taking apps out right now and the most beautifully designed.",
-            "url": "https://www.craft.do",
-            "image": "/assets/images/craft.svg",
+            "title": "Bear",
+            "description": "I believe it’s one of the best  note taking apps out right now for me. Has tags, back links and is simple.",
+            "url": "https://bear.app",
+            "image": "/assets/images/bear.png",
             "category": "productivity"
         },
         {
