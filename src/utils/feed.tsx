@@ -1,8 +1,8 @@
 import fs from 'fs'
 import { Feed } from 'feed'
-import { allPosts } from 'contentlayer/generated'
+import { allPosts, Post } from 'contentlayer/generated'
 
-const generateRssFeed = async () => {
+const generateRssFeed = async (post: Post) => {
     const posts = allPosts
     const siteURL = 'www.tregalloway.com'
     const date = new Date()
@@ -35,7 +35,7 @@ const generateRssFeed = async () => {
             id: url,
             link: url,
             description: post.description,
-            content: post.body.code,
+            content: post.body.raw,
             author: [author],
             contributor: [author],
             date: new Date(post.datePublished),
