@@ -26,8 +26,8 @@ const App = ({ Component, pageProps }: AppProps) => {
         //  - Do not include https://
         //  - This must be an exact match of your domain.
         //  - If you're using www. for your domain, make sure you include that here.
-        Fathom.load('YOUR_FATHOM_TRACKING_CODE', {
-            includedDomains: ['yourdomain.com'],
+        Fathom.load('UPJAYRLL', {
+            includedDomains: ['tregalloway.com', 'www.tregalloway.com'],
         })
 
         function onRouteChangeComplete() {
