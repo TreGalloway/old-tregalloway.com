@@ -20,6 +20,7 @@
         "contentlayer": "^0.2.5",
         "esbuild": "^0.14.43",
         "fathom-client": "^3.5.0",
+        "feed": "^4.2.2",
         "framer-motion": "^6.3.4",
         "image-size": "^1.0.1",
         "mdx-bundler": "^9.0.1",

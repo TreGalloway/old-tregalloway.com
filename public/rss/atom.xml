@@ -1,0 +1,70 @@
+<?xml version="1.0" encoding="utf-8"?>
+<feed xmlns="http://www.w3.org/2005/Atom">
+    <id/>
+    <title>Tre Galloway blog</title>
+    <updated>2022-07-07T19:46:06.304Z</updated>
+    <generator>Feed for Node.js</generator>
+    <author>
+        <name>Tre Galloway</name>
+        <email>tre@tregalloway.com</email>
+        <uri>https://twitter.com/bytregalloway</uri>
+    </author>
+    <link rel="self" href="undefined/rss/atom.xml"/>
+    <logo>undefined/logo.svg</logo>
+    <icon>undefined/favicon.png</icon>
+    <rights>All rights reserved 2022, Tre Galloway</rights>
+    <entry>
+        <title type="html"><![CDATA[Code Hike 2]]></title>
+        <id>undefined/blog/code-hike-2</id>
+        <link href="undefined/blog/code-hike-2"/>
+        <updated>2022-06-22T00:00:00.000Z</updated>
+        <summary type="html"><![CDATA[Trying out code hike]]></summary>
+        <content type="html"><![CDATA[Trying out code hike]]></content>
+        <author>
+            <name>Tre Galloway</name>
+            <email>tre@tregalloway.com</email>
+            <uri>https://twitter.com/bytregalloway</uri>
+        </author>
+        <contributor>
+            <name>Tre Galloway</name>
+            <email>tre@tregalloway.com</email>
+            <uri>https://twitter.com/bytregalloway</uri>
+        </contributor>
+    </entry>
+    <entry>
+        <title type="html"><![CDATA[Code Hike]]></title>
+        <id>undefined/blog/code-hike</id>
+        <link href="undefined/blog/code-hike"/>
+        <updated>2022-02-05T00:00:00.000Z</updated>
+        <summary type="html"><![CDATA[Trying out code hike]]></summary>
+        <content type="html"><![CDATA[Trying out code hike]]></content>
+        <author>
+            <name>Tre Galloway</name>
+            <email>tre@tregalloway.com</email>
+            <uri>https://twitter.com/bytregalloway</uri>
+        </author>
+        <contributor>
+            <name>Tre Galloway</name>
+            <email>tre@tregalloway.com</email>
+            <uri>https://twitter.com/bytregalloway</uri>
+        </contributor>
+    </entry>
+    <entry>
+        <title type="html"><![CDATA[Content Layer Tutorial 3]]></title>
+        <id>undefined/blog/test-3</id>
+        <link href="undefined/blog/test-3"/>
+        <updated>2022-02-05T00:00:00.000Z</updated>
+        <summary type="html"><![CDATA[To understand how nextjs transform markdown to html, you need to know a bit more about how contentlayer works.]]></summary>
+        <content type="html"><![CDATA[To understand how nextjs transform markdown to html, you need to know a bit more about how contentlayer works.]]></content>
+        <author>
+            <name>Tre Galloway</name>
+            <email>tre@tregalloway.com</email>
+            <uri>https://twitter.com/bytregalloway</uri>
+        </author>
+        <contributor>
+            <name>Tre Galloway</name>
+            <email>tre@tregalloway.com</email>
+            <uri>https://twitter.com/bytregalloway</uri>
+        </contributor>
+    </entry>
+</feed>

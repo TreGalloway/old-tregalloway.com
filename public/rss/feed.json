@@ -1,0 +1,48 @@
+{
+    "version": "https://jsonfeed.org/version/1",
+    "title": "Tre Galloway blog",
+    "feed_url": "undefined/rss/feed.json",
+    "icon": "undefined/logo.svg",
+    "author": {
+        "name": "Tre Galloway",
+        "url": "https://twitter.com/bytregalloway"
+    },
+    "items": [
+        {
+            "id": "undefined/blog/code-hike-2",
+            "content_html": "Trying out code hike",
+            "url": "undefined/blog/code-hike-2",
+            "title": "Code Hike 2",
+            "summary": "Trying out code hike",
+            "date_modified": "2022-06-22T00:00:00.000Z",
+            "author": {
+                "name": "Tre Galloway",
+                "url": "https://twitter.com/bytregalloway"
+            }
+        },
+        {
+            "id": "undefined/blog/code-hike",
+            "content_html": "Trying out code hike",
+            "url": "undefined/blog/code-hike",
+            "title": "Code Hike",
+            "summary": "Trying out code hike",
+            "date_modified": "2022-02-05T00:00:00.000Z",
+            "author": {
+                "name": "Tre Galloway",
+                "url": "https://twitter.com/bytregalloway"
+            }
+        },
+        {
+            "id": "undefined/blog/test-3",
+            "content_html": "To understand how nextjs transform markdown to html, you need to know a bit more about how contentlayer works.",
+            "url": "undefined/blog/test-3",
+            "title": "Content Layer Tutorial 3",
+            "summary": "To understand how nextjs transform markdown to html, you need to know a bit more about how contentlayer works.",
+            "date_modified": "2022-02-05T00:00:00.000Z",
+            "author": {
+                "name": "Tre Galloway",
+                "url": "https://twitter.com/bytregalloway"
+            }
+        }
+    ]
+}

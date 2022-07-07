@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="utf-8"?>
+<rss version="2.0" xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:content="http://purl.org/rss/1.0/modules/content/">
+    <channel>
+        <title>Tre Galloway blog</title>
+        <link>undefined</link>
+        <description></description>
+        <lastBuildDate>Thu, 07 Jul 2022 19:46:06 GMT</lastBuildDate>
+        <docs>https://validator.w3.org/feed/docs/rss2.html</docs>
+        <generator>Feed for Node.js</generator>
+        <image>
+            <title>Tre Galloway blog</title>
+            <url>undefined/logo.svg</url>
+            <link>undefined</link>
+        </image>
+        <copyright>All rights reserved 2022, Tre Galloway</copyright>
+        <item>
+            <title><![CDATA[Code Hike 2]]></title>
+            <link>undefined/blog/code-hike-2</link>
+            <guid>undefined/blog/code-hike-2</guid>
+            <pubDate>Wed, 22 Jun 2022 00:00:00 GMT</pubDate>
+            <description><![CDATA[Trying out code hike]]></description>
+            <content:encoded><![CDATA[Trying out code hike]]></content:encoded>
+            <author>tre@tregalloway.com (Tre Galloway)</author>
+        </item>
+        <item>
+            <title><![CDATA[Code Hike]]></title>
+            <link>undefined/blog/code-hike</link>
+            <guid>undefined/blog/code-hike</guid>
+            <pubDate>Sat, 05 Feb 2022 00:00:00 GMT</pubDate>
+            <description><![CDATA[Trying out code hike]]></description>
+            <content:encoded><![CDATA[Trying out code hike]]></content:encoded>
+            <author>tre@tregalloway.com (Tre Galloway)</author>
+        </item>
+        <item>
+            <title><![CDATA[Content Layer Tutorial 3]]></title>
+            <link>undefined/blog/test-3</link>
+            <guid>undefined/blog/test-3</guid>
+            <pubDate>Sat, 05 Feb 2022 00:00:00 GMT</pubDate>
+            <description><![CDATA[To understand how nextjs transform markdown to html, you need to know a bit more about how contentlayer works.]]></description>
+            <content:encoded><![CDATA[To understand how nextjs transform markdown to html, you need to know a bit more about how contentlayer works.]]></content:encoded>
+            <author>tre@tregalloway.com (Tre Galloway)</author>
+        </item>
+    </channel>
+</rss>
