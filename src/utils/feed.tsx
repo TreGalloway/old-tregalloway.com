@@ -4,7 +4,7 @@ import { allPosts } from 'contentlayer/generated'
 
 const generateRssFeed = async () => {
     const posts = allPosts
-    const siteURL = process.env.SITE_URL
+    const siteURL = 'www.tregalloway.com'
     const date = new Date()
     const author = {
         name: 'Tre Galloway',

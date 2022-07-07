@@ -1,22 +1,23 @@
 <?xml version="1.0" encoding="utf-8"?>
 <feed xmlns="http://www.w3.org/2005/Atom">
-    <id/>
+    <id>www.tregalloway.com</id>
     <title>Tre Galloway blog</title>
-    <updated>2022-07-07T19:46:06.304Z</updated>
+    <updated>2022-07-07T20:03:46.790Z</updated>
     <generator>Feed for Node.js</generator>
     <author>
         <name>Tre Galloway</name>
         <email>tre@tregalloway.com</email>
         <uri>https://twitter.com/bytregalloway</uri>
     </author>
-    <link rel="self" href="undefined/rss/atom.xml"/>
-    <logo>undefined/logo.svg</logo>
-    <icon>undefined/favicon.png</icon>
+    <link rel="alternate" href="www.tregalloway.com"/>
+    <link rel="self" href="www.tregalloway.com/rss/atom.xml"/>
+    <logo>www.tregalloway.com/logo.svg</logo>
+    <icon>www.tregalloway.com/favicon.png</icon>
     <rights>All rights reserved 2022, Tre Galloway</rights>
     <entry>
         <title type="html"><![CDATA[Code Hike 2]]></title>
-        <id>undefined/blog/code-hike-2</id>
-        <link href="undefined/blog/code-hike-2"/>
+        <id>www.tregalloway.com/blog/code-hike-2</id>
+        <link href="www.tregalloway.com/blog/code-hike-2"/>
         <updated>2022-06-22T00:00:00.000Z</updated>
         <summary type="html"><![CDATA[Trying out code hike]]></summary>
         <content type="html"><![CDATA[Trying out code hike]]></content>
@@ -33,8 +34,8 @@
     </entry>
     <entry>
         <title type="html"><![CDATA[Code Hike]]></title>
-        <id>undefined/blog/code-hike</id>
-        <link href="undefined/blog/code-hike"/>
+        <id>www.tregalloway.com/blog/code-hike</id>
+        <link href="www.tregalloway.com/blog/code-hike"/>
         <updated>2022-02-05T00:00:00.000Z</updated>
         <summary type="html"><![CDATA[Trying out code hike]]></summary>
         <content type="html"><![CDATA[Trying out code hike]]></content>
@@ -51,8 +52,8 @@
     </entry>
     <entry>
         <title type="html"><![CDATA[Content Layer Tutorial 3]]></title>
-        <id>undefined/blog/test-3</id>
-        <link href="undefined/blog/test-3"/>
+        <id>www.tregalloway.com/blog/test-3</id>
+        <link href="www.tregalloway.com/blog/test-3"/>
         <updated>2022-02-05T00:00:00.000Z</updated>
         <summary type="html"><![CDATA[To understand how nextjs transform markdown to html, you need to know a bit more about how contentlayer works.]]></summary>
         <content type="html"><![CDATA[To understand how nextjs transform markdown to html, you need to know a bit more about how contentlayer works.]]></content>
