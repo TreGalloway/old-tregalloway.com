@@ -6,8 +6,10 @@ import type { GetStaticPaths, GetStaticProps } from 'next'
 import MDXComponents from '@/components/mdx-component/mdx-components'
 import formatDate from '@/utils/format-date'
 import { chakra } from '@chakra-ui/system'
-import ScrollToTopButton from '../../src/components/scroll-to-top-button/scroll-to-top-button'
+
 import NewsletterForm from '../../src/components/newsletter-form/newsletter-form'
+
+import SideButtons from '@/components/buttons/side-buttons'
 
 export default function Blog({ post }: { post: Post }) {
     const title = `${post.title} — Tre Galloway`
@@ -104,7 +106,7 @@ export default function Blog({ post }: { post: Post }) {
                 <Divider />
                 <NewsletterForm />
             </VStack>
-            <ScrollToTopButton />
+            <SideButtons key={post.tweetUrl} data={post} />
         </>
     )
 }

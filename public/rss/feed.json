@@ -11,7 +11,7 @@
     "items": [
         {
             "id": "www.tregalloway.com/blog/code-hike-2",
-            "content_html": "code-hike-2",
+            "content_html": "\n# Just testing out [Code Hike](https://codehike.org/)\n\nSome normal `markdown`\n\n## Annotation Example\n\n```js index.js box=1[25:39]\nconsole.log('Some code. I am annotated!')\n```\n\n## Focus Example\n\n```js next.config.js focus=1:2,7\nconst { remarkCodeHike } = require('@code-hike/mdx')\nconst theme = require('shiki/themes/monokai.json')\n\nconst withMDX = require('@next/mdx')({\n    extension: /\\.mdx?$/,\n    options: {\n        remarkPlugins: [[remarkCodeHike, { theme }]],\n        rehypePlugins: [],\n    },\n})\n\nmodule.exports = withMDX({\n    pageExtensions: ['ts', 'tsx', 'js', 'jsx', 'md', 'mdx'],\n})\n```\n\n<CH.Section>\n\n## Code Links Example\n\nWe are looking at the [console.log](focus://console.js#2) function today\n\n</CH.Section>\n",
             "url": "www.tregalloway.com/blog/code-hike-2",
             "title": "Code Hike 2",
             "summary": "Trying out code hike",
@@ -23,7 +23,7 @@
         },
         {
             "id": "www.tregalloway.com/blog/code-hike",
-            "content_html": "code-hike",
+            "content_html": "\n# Just testing out [Code Hike](https://codehike.org/)\n\nSome normal `markdown`\n\n## Annotation Example\n\n```js index.js box=1[25:39]\nconsole.log('Some code. I am annotated!')\n```\n\n## Focus Example\n\n```js next.config.js focus=1:2,7\nconst { remarkCodeHike } = require('@code-hike/mdx')\nconst theme = require('shiki/themes/monokai.json')\n\nconst withMDX = require('@next/mdx')({\n    extension: /\\.mdx?$/,\n    options: {\n        remarkPlugins: [[remarkCodeHike, { theme }]],\n        rehypePlugins: [],\n    },\n})\n\nmodule.exports = withMDX({\n    pageExtensions: ['ts', 'tsx', 'js', 'jsx', 'md', 'mdx'],\n})\n```\n\n<CH.Section>\n\n## Code Links Example\n\nWe are looking at the [console.log](focus://console.js#2) function today\n\n</CH.Section>\n",
             "url": "www.tregalloway.com/blog/code-hike",
             "title": "Code Hike",
             "summary": "Trying out code hike",
@@ -35,7 +35,7 @@
         },
         {
             "id": "www.tregalloway.com/blog/test-3",
-            "content_html": "test-3",
+            "content_html": "\nIf you’re looking to build a website using Nextjs and MDX files you’ve come to the right place.\n\nIn this guide you’ll mainly be focusing on the sourcing of data and learning how **[Contentlayer](https://github.com/contentlayerdev/contentlayer)** works rather than how to make a pretty looking website.\n\n## **What is Contentlayer?**\n\n> Note: Contentlayer still in development and some APIs might change!\n\n**[Contentlayer](https://github.com/contentlayerdev/contentlayer)** turns your content into data - making it super easy to import MD(X) and CMS content in your app.\n\nYou can find the [full documention for Contentlayer here](https://www.contentlayer.dev/docs).\n\nI'm looking forward to seeing the adoption of Content Layer as it will be on stable version.\n\n## Heading\n\n```tsx SandpackEmbed.tsx\n<SandpackEmbed\n    options={{\n        editorHeight: 600,\n        editorWidthPercentage: 60,\n    }}\n    files={{\n        '/src/App.tsx': App,\n        '/src/index.tsx': Index,\n    }}\n    zIndex={0}\n    tabIndex={-1}\n/>\n```\n",
             "url": "www.tregalloway.com/blog/test-3",
             "title": "Content Layer Tutorial 3",
             "summary": "To understand how nextjs transform markdown to html, you need to know a bit more about how contentlayer works.",

@@ -2,7 +2,7 @@
 <feed xmlns="http://www.w3.org/2005/Atom">
     <id>www.tregalloway.com</id>
     <title>Tre Galloway blog</title>
-    <updated>2022-07-07T20:26:52.987Z</updated>
+    <updated>2022-07-08T21:24:45.699Z</updated>
     <generator>Feed for Node.js</generator>
     <author>
         <name>Tre Galloway</name>
@@ -20,7 +20,44 @@
         <link href="www.tregalloway.com/blog/code-hike-2"/>
         <updated>2022-06-22T00:00:00.000Z</updated>
         <summary type="html"><![CDATA[Trying out code hike]]></summary>
-        <content type="html"><![CDATA[code-hike-2]]></content>
+        <content type="html"><![CDATA[
+# Just testing out [Code Hike](https://codehike.org/)
+
+Some normal `markdown`
+
+## Annotation Example
+
+```js index.js box=1[25:39]
+console.log('Some code. I am annotated!')
+```
+
+## Focus Example
+
+```js next.config.js focus=1:2,7
+const { remarkCodeHike } = require('@code-hike/mdx')
+const theme = require('shiki/themes/monokai.json')
+
+const withMDX = require('@next/mdx')({
+    extension: /\.mdx?$/,
+    options: {
+        remarkPlugins: [[remarkCodeHike, { theme }]],
+        rehypePlugins: [],
+    },
+})
+
+module.exports = withMDX({
+    pageExtensions: ['ts', 'tsx', 'js', 'jsx', 'md', 'mdx'],
+})
+```
+
+<CH.Section>
+
+## Code Links Example
+
+We are looking at the [console.log](focus://console.js#2) function today
+
+</CH.Section>
+]]></content>
         <author>
             <name>Tre Galloway</name>
             <email>tre@tregalloway.com</email>
@@ -38,7 +75,44 @@
         <link href="www.tregalloway.com/blog/code-hike"/>
         <updated>2022-02-05T00:00:00.000Z</updated>
         <summary type="html"><![CDATA[Trying out code hike]]></summary>
-        <content type="html"><![CDATA[code-hike]]></content>
+        <content type="html"><![CDATA[
+# Just testing out [Code Hike](https://codehike.org/)
+
+Some normal `markdown`
+
+## Annotation Example
+
+```js index.js box=1[25:39]
+console.log('Some code. I am annotated!')
+```
+
+## Focus Example
+
+```js next.config.js focus=1:2,7
+const { remarkCodeHike } = require('@code-hike/mdx')
+const theme = require('shiki/themes/monokai.json')
+
+const withMDX = require('@next/mdx')({
+    extension: /\.mdx?$/,
+    options: {
+        remarkPlugins: [[remarkCodeHike, { theme }]],
+        rehypePlugins: [],
+    },
+})
+
+module.exports = withMDX({
+    pageExtensions: ['ts', 'tsx', 'js', 'jsx', 'md', 'mdx'],
+})
+```
+
+<CH.Section>
+
+## Code Links Example
+
+We are looking at the [console.log](focus://console.js#2) function today
+
+</CH.Section>
+]]></content>
         <author>
             <name>Tre Galloway</name>
             <email>tre@tregalloway.com</email>
@@ -56,7 +130,38 @@
         <link href="www.tregalloway.com/blog/test-3"/>
         <updated>2022-02-05T00:00:00.000Z</updated>
         <summary type="html"><![CDATA[To understand how nextjs transform markdown to html, you need to know a bit more about how contentlayer works.]]></summary>
-        <content type="html"><![CDATA[test-3]]></content>
+        <content type="html"><![CDATA[
+If you’re looking to build a website using Nextjs and MDX files you’ve come to the right place.
+
+In this guide you’ll mainly be focusing on the sourcing of data and learning how **[Contentlayer](https://github.com/contentlayerdev/contentlayer)** works rather than how to make a pretty looking website.
+
+## **What is Contentlayer?**
+
+> Note: Contentlayer still in development and some APIs might change!
+
+**[Contentlayer](https://github.com/contentlayerdev/contentlayer)** turns your content into data - making it super easy to import MD(X) and CMS content in your app.
+
+You can find the [full documention for Contentlayer here](https://www.contentlayer.dev/docs).
+
+I'm looking forward to seeing the adoption of Content Layer as it will be on stable version.
+
+## Heading
+
+```tsx SandpackEmbed.tsx
+<SandpackEmbed
+    options={{
+        editorHeight: 600,
+        editorWidthPercentage: 60,
+    }}
+    files={{
+        '/src/App.tsx': App,
+        '/src/index.tsx': Index,
+    }}
+    zIndex={0}
+    tabIndex={-1}
+/>
+```
+]]></content>
         <author>
             <name>Tre Galloway</name>
             <email>tre@tregalloway.com</email>

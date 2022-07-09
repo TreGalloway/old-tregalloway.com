@@ -5,7 +5,7 @@ import { useMDXComponent } from 'next-contentlayer/hooks'
 import type { GetStaticPaths, GetStaticProps } from 'next'
 import MDXComponents from '@/components/mdx-component/mdx-components'
 import { chakra } from '@chakra-ui/system'
-import ScrollToTopButton from '../../src/components/scroll-to-top-button/scroll-to-top-button'
+import ScrollToTopButton from '../../src/components/buttons/scroll-to-top-button'
 import NewsletterForm from '../../src/components/newsletter-form/newsletter-form'
 
 export default function BookNotes({ book }: { book: Book }) {

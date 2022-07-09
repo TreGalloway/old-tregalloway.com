@@ -29,7 +29,7 @@ const computedFields: ComputedFields = {
             const slug = doc._raw.sourceFileName.replace(/\.mdx$/, '')
             return `https://twitter.com/intent/tweet?${new URLSearchParams({
                 url: `https://tregalloway.com/${doc.type.toLowerCase()}/${slug}`,
-                text: `I just read "${doc.title}" by @bytregalloway\n\n`,
+                text: `I just read "${doc.title}" by @bytregalloway\n\n `,
             })}`
         },
     },

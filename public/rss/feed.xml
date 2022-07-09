@@ -4,7 +4,7 @@
         <title>Tre Galloway blog</title>
         <link>www.tregalloway.com</link>
         <description></description>
-        <lastBuildDate>Thu, 07 Jul 2022 20:26:52 GMT</lastBuildDate>
+        <lastBuildDate>Fri, 08 Jul 2022 21:24:45 GMT</lastBuildDate>
         <docs>https://validator.w3.org/feed/docs/rss2.html</docs>
         <generator>Feed for Node.js</generator>
         <image>
@@ -19,7 +19,44 @@
             <guid>www.tregalloway.com/blog/code-hike-2</guid>
             <pubDate>Wed, 22 Jun 2022 00:00:00 GMT</pubDate>
             <description><![CDATA[Trying out code hike]]></description>
-            <content:encoded><![CDATA[code-hike-2]]></content:encoded>
+            <content:encoded><![CDATA[
+# Just testing out [Code Hike](https://codehike.org/)
+
+Some normal `markdown`
+
+## Annotation Example
+
+```js index.js box=1[25:39]
+console.log('Some code. I am annotated!')
+```
+
+## Focus Example
+
+```js next.config.js focus=1:2,7
+const { remarkCodeHike } = require('@code-hike/mdx')
+const theme = require('shiki/themes/monokai.json')
+
+const withMDX = require('@next/mdx')({
+    extension: /\.mdx?$/,
+    options: {
+        remarkPlugins: [[remarkCodeHike, { theme }]],
+        rehypePlugins: [],
+    },
+})
+
+module.exports = withMDX({
+    pageExtensions: ['ts', 'tsx', 'js', 'jsx', 'md', 'mdx'],
+})
+```
+
+<CH.Section>
+
+## Code Links Example
+
+We are looking at the [console.log](focus://console.js#2) function today
+
+</CH.Section>
+]]></content:encoded>
             <author>tre@tregalloway.com (Tre Galloway)</author>
         </item>
         <item>
@@ -28,7 +65,44 @@
             <guid>www.tregalloway.com/blog/code-hike</guid>
             <pubDate>Sat, 05 Feb 2022 00:00:00 GMT</pubDate>
             <description><![CDATA[Trying out code hike]]></description>
-            <content:encoded><![CDATA[code-hike]]></content:encoded>
+            <content:encoded><![CDATA[
+# Just testing out [Code Hike](https://codehike.org/)
+
+Some normal `markdown`
+
+## Annotation Example
+
+```js index.js box=1[25:39]
+console.log('Some code. I am annotated!')
+```
+
+## Focus Example
+
+```js next.config.js focus=1:2,7
+const { remarkCodeHike } = require('@code-hike/mdx')
+const theme = require('shiki/themes/monokai.json')
+
+const withMDX = require('@next/mdx')({
+    extension: /\.mdx?$/,
+    options: {
+        remarkPlugins: [[remarkCodeHike, { theme }]],
+        rehypePlugins: [],
+    },
+})
+
+module.exports = withMDX({
+    pageExtensions: ['ts', 'tsx', 'js', 'jsx', 'md', 'mdx'],
+})
+```
+
+<CH.Section>
+
+## Code Links Example
+
+We are looking at the [console.log](focus://console.js#2) function today
+
+</CH.Section>
+]]></content:encoded>
             <author>tre@tregalloway.com (Tre Galloway)</author>
         </item>
         <item>
@@ -37,7 +111,38 @@
             <guid>www.tregalloway.com/blog/test-3</guid>
             <pubDate>Sat, 05 Feb 2022 00:00:00 GMT</pubDate>
             <description><![CDATA[To understand how nextjs transform markdown to html, you need to know a bit more about how contentlayer works.]]></description>
-            <content:encoded><![CDATA[test-3]]></content:encoded>
+            <content:encoded><![CDATA[
+If you’re looking to build a website using Nextjs and MDX files you’ve come to the right place.
+
+In this guide you’ll mainly be focusing on the sourcing of data and learning how **[Contentlayer](https://github.com/contentlayerdev/contentlayer)** works rather than how to make a pretty looking website.
+
+## **What is Contentlayer?**
+
+> Note: Contentlayer still in development and some APIs might change!
+
+**[Contentlayer](https://github.com/contentlayerdev/contentlayer)** turns your content into data - making it super easy to import MD(X) and CMS content in your app.
+
+You can find the [full documention for Contentlayer here](https://www.contentlayer.dev/docs).
+
+I'm looking forward to seeing the adoption of Content Layer as it will be on stable version.
+
+## Heading
+
+```tsx SandpackEmbed.tsx
+<SandpackEmbed
+    options={{
+        editorHeight: 600,
+        editorWidthPercentage: 60,
+    }}
+    files={{
+        '/src/App.tsx': App,
+        '/src/index.tsx': Index,
+    }}
+    zIndex={0}
+    tabIndex={-1}
+/>
+```
+]]></content:encoded>
             <author>tre@tregalloway.com (Tre Galloway)</author>
         </item>
     </channel>

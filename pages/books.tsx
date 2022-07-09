@@ -14,7 +14,7 @@ import {
 } from '../src/utils/contetnlayer'
 import BookCard from '@/components/cards/book-card'
 import { TbCheckbox, TbCoffee, TbClock, TbStar } from 'react-icons/tb'
-import ScrollToTopButton from '@/components/scroll-to-top-button/scroll-to-top-button'
+import ScrollToTopButton from '@/components/buttons/scroll-to-top-button'
 
 export default function Books() {
     return (
