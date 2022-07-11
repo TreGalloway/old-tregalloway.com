@@ -1,10 +1,5 @@
 import { ChangeEventHandler, useState } from 'react'
-import {
-    GetStaticProps,
-    GetStaticPropsResult,
-    InferGetStaticPropsType,
-    NextPage,
-} from 'next'
+import { GetStaticPropsResult, InferGetStaticPropsType, NextPage } from 'next'
 import {
     Heading,
     Text,
@@ -21,7 +16,7 @@ import { HiOutlineSearch } from 'react-icons/hi'
 
 import BlogPostCard from '../src/components/cards/blog-post-card'
 import { allPosts, Post } from 'contentlayer/generated'
-import GenerateRssFeed from 'pages/blog/feed'
+import GenerateRssFeed from '@/utils/feed'
 
 export async function getStaticProps(
     _context
