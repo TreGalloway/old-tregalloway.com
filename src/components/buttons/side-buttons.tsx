@@ -2,7 +2,7 @@ import { useState, useEffect } from 'react'
 import { IconButton, Text, Tooltip, VStack } from '@chakra-ui/react'
 import RssButton from './rss-button'
 import { BiArrowToTop } from 'react-icons/bi'
-import { TbBrandTwitter } from 'react-icons/tb'
+import { TbBrandTwitter, TbRss } from 'react-icons/tb'
 import { Post } from 'contentlayer/generated'
 
 type PostTweetProps = {
@@ -51,7 +51,25 @@ const SideButtons = (props: PostTweetProps) => {
                         placement={'left'}
                         rounded={'md'}
                     >
-                        <RssButton />
+                        <IconButton
+                            fill={''}
+                            bg="gray.50"
+                            _dark={{ bg: 'gray.700' }}
+                            aria-label="Share Post to Twitter"
+                            icon={
+                                <Text color={'orange.400'}>
+                                    <TbRss size={22} />
+                                </Text>
+                            }
+                            rounded="lg"
+                            size="lg"
+                            variant="outline"
+                            onClick={() =>
+                                navigator.clipboard.writeText(
+                                    'https://www.tregalloway.com/rss/feed.xml'
+                                )
+                            }
+                        />
                     </Tooltip>
                     <Tooltip label={'Share'} placement="left" rounded={'md'}>
                         <a
@@ -66,11 +84,12 @@ const SideButtons = (props: PostTweetProps) => {
                                 aria-label="Share Post to Twitter"
                                 icon={
                                     <Text color={'blue.300'}>
-                                        <TbBrandTwitter />
+                                        <TbBrandTwitter size={22} />
                                     </Text>
                                 }
-                                rounded="full"
+                                rounded="lg"
                                 size="lg"
+                                variant="outline"
                             />
                         </a>
                     </Tooltip>
@@ -83,10 +102,11 @@ const SideButtons = (props: PostTweetProps) => {
                             bg="gray.50"
                             _dark={{ bg: 'gray.700' }}
                             aria-label="Back to the top"
-                            icon={<BiArrowToTop />}
+                            icon={<BiArrowToTop size={22} />}
                             onClick={scrollTop}
-                            rounded="full"
+                            rounded="lg"
                             size="lg"
+                            variant="outline"
                         />
                     </Tooltip>
                 </VStack>

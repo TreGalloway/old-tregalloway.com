@@ -1,18 +1,21 @@
 import fs from 'fs'
 import { Feed } from 'feed'
 import { allPosts, Post } from 'contentlayer/generated'
+import { useMDXComponent } from 'next-contentlayer/hooks'
+import MDXComponents from '@/components/mdx-component/mdx-components'
 
 export default function GenerateRssFeed({ post }: { post: Post }) {
+    const Postcode = useMDXComponent(post.body.code)
+    const mdx = <Postcode components={MDXComponents} />
     const posts = allPosts
     const siteURL = 'www.tregalloway.com'
     const date = new Date()
     const author = {
         name: 'Tre Galloway',
-        email: 'tre@tregalloway.com',
         link: 'https://twitter.com/bytregalloway',
     }
     const feed = new Feed({
-        title: 'Tre Galloway blog',
+        title: 'Tre Galloway',
         description: '',
         id: siteURL,
         link: siteURL,
@@ -35,7 +38,9 @@ export default function GenerateRssFeed({ post }: { post: Post }) {
             id: url,
             link: url,
             description: post.description,
-            content: post.body.code,
+            // @ts-ignore: Unreachable code error
+
+            content: mdx,
             author: [author],
             contributor: [author],
             date: new Date(post.datePublished),

@@ -23,16 +23,17 @@ const RssButton = () => {
                 <PopoverTrigger>
                     <IconButton
                         fill={''}
-                        bg="gray.100"
-                        _dark={{ bg: 'gray.800' }}
+                        bg="gray.50"
+                        _dark={{ bg: 'gray.700' }}
                         aria-label="Share Post to Twitter"
                         icon={
                             <Text color={'orange.400'}>
-                                <TbRss />
+                                <TbRss size={22} />
                             </Text>
                         }
-                        rounded="full"
+                        rounded="lg"
                         size="lg"
+                        variant="outline"
                     />
                 </PopoverTrigger>
                 <PopoverContent>
