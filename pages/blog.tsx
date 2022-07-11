@@ -21,12 +21,12 @@ import { HiOutlineSearch } from 'react-icons/hi'
 
 import BlogPostCard from '../src/components/cards/blog-post-card'
 import { allPosts, Post } from 'contentlayer/generated'
-import generateRssFeed from '@/utils/feed'
+import GenerateRssFeed from 'pages/blog/feed'
 
 export async function getStaticProps(
     _context
 ): Promise<GetStaticPropsResult<{ posts: Post[] }>> {
-    await generateRssFeed()
+    GenerateRssFeed
 
     return { props: { posts: allPosts } }
 }

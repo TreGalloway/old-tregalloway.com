@@ -23,7 +23,7 @@ const RssButton = () => {
                 <PopoverTrigger>
                     <IconButton
                         fill={''}
-                        bg="gray.10"
+                        bg="gray.100"
                         _dark={{ bg: 'gray.800' }}
                         aria-label="Share Post to Twitter"
                         icon={

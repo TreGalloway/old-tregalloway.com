@@ -2,7 +2,7 @@ import fs from 'fs'
 import { Feed } from 'feed'
 import { allPosts, Post } from 'contentlayer/generated'
 
-const generateRssFeed = async (post: Post) => {
+export default function GenerateRssFeed({ post }: { post: Post }) {
     const posts = allPosts
     const siteURL = 'www.tregalloway.com'
     const date = new Date()
@@ -35,7 +35,7 @@ const generateRssFeed = async (post: Post) => {
             id: url,
             link: url,
             description: post.description,
-            content: post.body.raw,
+            content: post.body.code,
             author: [author],
             contributor: [author],
             date: new Date(post.datePublished),
@@ -46,5 +46,3 @@ const generateRssFeed = async (post: Post) => {
     fs.writeFileSync('./public/rss/atom.xml', feed.atom1())
     fs.writeFileSync('./public/rss/feed.json', feed.json1())
 }
-
-export default generateRssFeed
