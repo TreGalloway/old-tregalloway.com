@@ -11,7 +11,7 @@ import {
     allReadingBooks,
     allFavBooks,
     allNextBooks,
-} from '../src/utils/contetnlayer'
+} from '../src/utils/contentlayer'
 import BookCard from '@/components/cards/book-card'
 import { TbCheckbox, TbCoffee, TbClock, TbStar } from 'react-icons/tb'
 import ScrollToTopButton from '@/components/buttons/scroll-to-top-button'

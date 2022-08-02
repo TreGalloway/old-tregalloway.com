@@ -21,14 +21,16 @@
             "@/components/*": ["src/components/*"],
             "@/types/*": ["src/types/*"],
             "@/utils/*": ["src/utils/*"],
-            "@/data/*": ["data/*"]
+            "@/data/*": ["data/*"],
+            "@lib/*": ["./lib/*"]
         }
     },
     "include": [
         "next-env.d.ts",
         "**/*.ts",
         "**/*.tsx",
-        ".contentlayer/generated"
+        ".contentlayer/generated",
+        "src/components/storyblok/page.js"
     ],
     "exclude": ["node_modules"]
 }
