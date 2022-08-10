@@ -30,7 +30,8 @@
         "**/*.ts",
         "**/*.tsx",
         ".contentlayer/generated",
-        "src/components/storyblok/page.js"
+        "src/components/storyblok/page.js",
+        "prisma/schema.prisma.js"
     ],
     "exclude": ["node_modules"]
 }
