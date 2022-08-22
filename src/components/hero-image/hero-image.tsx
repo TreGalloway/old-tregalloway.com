@@ -11,7 +11,7 @@ const HeroImage = () => {
                 <Box overflow="hidden" rounded="full">
                     <Image
                         src={
-                            'https://res.cloudinary.com/dq6endwuq/image/upload/v1659452456/tregalloway.com/profile_ceer1i.jpg'
+                            'https://res.cloudinary.com/dq6endwuq/image/upload/v1661138915/social_pic_rlxbrw.png'
                         }
                         alt="profile image"
                         layout="fill"
