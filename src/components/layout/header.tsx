@@ -36,7 +36,7 @@ const Header = () => {
             py={3}
             bg="white"
             _dark={{
-                bg: 'gray.900',
+                bg: 'gray.800',
             }}
             insetX={0}
             transitionDuration="normal"

@@ -57,7 +57,7 @@ const NewsletterForm = () => {
             p={{ base: 4, md: 6 }}
             bg="gray.50"
             _dark={{
-                bg: 'gray.800',
+                bg: 'gray.700',
             }}
             rounded="md"
             spacing={3}

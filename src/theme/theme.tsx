@@ -22,12 +22,11 @@ const inputBorder = (props: any) => ({
 const theme = extendTheme({
     config,
     styles: {
-        global: (props) => ({
+        global: {
             body: {
                 fontFeatureSettings: 'Oswald',
-                bg: mode('white', 'gray.900')(props),
             },
-        }),
+        },
     },
     sizes: {
         18: '4.5rem',

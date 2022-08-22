@@ -32,7 +32,7 @@ const BlogPostCard = (props: BlogCardProps) => {
                 }}
                 _dark={{
                     _hover: {
-                        bg: 'gray.800',
+                        bg: 'gray.700',
                     },
                 }}
                 rounded="md"

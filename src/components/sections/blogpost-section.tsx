@@ -3,7 +3,7 @@ import { CgArrowRight } from 'react-icons/cg'
 import { allPosts, Post } from 'contentlayer/generated'
 import BlogPostCard from '../cards/blog-post-card'
 import Link from '../link/link'
-import { allFeaturedPosts } from '@/utils/contentlayer'
+import { allFeaturedPosts } from '@/utils/contetnlayer'
 
 export default function BlogpostsSection() {
     return (

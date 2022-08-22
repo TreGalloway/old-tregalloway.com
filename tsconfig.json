@@ -21,17 +21,14 @@
             "@/components/*": ["src/components/*"],
             "@/types/*": ["src/types/*"],
             "@/utils/*": ["src/utils/*"],
-            "@/data/*": ["data/*"],
-            "@lib/*": ["./lib/*"]
+            "@/data/*": ["data/*"]
         }
     },
     "include": [
         "next-env.d.ts",
         "**/*.ts",
         "**/*.tsx",
-        ".contentlayer/generated",
-        "src/components/storyblok/page.js",
-        "prisma/schema.prisma.js"
+        ".contentlayer/generated"
     ],
     "exclude": ["node_modules"]
 }

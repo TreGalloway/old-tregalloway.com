@@ -15,6 +15,8 @@ import CmdPaletteProvider from 'src/providers/cmd-palette-provider'
 // import '../styles/prism.css'
 import '@code-hike/mdx/dist/index.css'
 
+// import '/Users/tre/tregalloway.com/styles/style.css'
+
 const App = ({ Component, pageProps }: AppProps) => {
     const router = useRouter()
 
@@ -39,7 +41,6 @@ const App = ({ Component, pageProps }: AppProps) => {
             router.events.off('routeChangeComplete', onRouteChangeComplete)
         }
     }, [])
-
     return (
         <ChakraProvider theme={theme}>
             <NextSeo
