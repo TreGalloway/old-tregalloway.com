@@ -20,7 +20,6 @@
         "@mdx-js/loader": "^2.1.2",
         "@mdx-js/react": "^2.1.2",
         "@next/mdx": "^12.2.1",
-        "@prisma/client": "^4.1.1",
         "@sanity/image-url": "^1.0.1",
         "contentlayer": "^0.2.5",
         "esbuild": "^0.14.48",
