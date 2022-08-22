@@ -16,6 +16,7 @@
         "@emotion/styled": "^11.9.3",
         "@keystone-6/auth": "^4.0.1",
         "@keystone-6/core": "^2.1.0",
+        "@keystone-6/fields-document": "^4.1.0",
         "@mdx-js/loader": "^2.1.2",
         "@mdx-js/react": "^2.1.2",
         "@next/mdx": "^12.2.1",
