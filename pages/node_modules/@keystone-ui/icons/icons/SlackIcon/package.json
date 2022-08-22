@@ -1,0 +1,4 @@
+{
+  "main": "dist/keystone-ui-icons-icons-SlackIcon.cjs.js",
+  "module": "dist/keystone-ui-icons-icons-SlackIcon.esm.js"
+}

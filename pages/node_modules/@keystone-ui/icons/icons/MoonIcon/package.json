@@ -1,0 +1,4 @@
+{
+  "main": "dist/keystone-ui-icons-icons-MoonIcon.cjs.js",
+  "module": "dist/keystone-ui-icons-icons-MoonIcon.esm.js"
+}

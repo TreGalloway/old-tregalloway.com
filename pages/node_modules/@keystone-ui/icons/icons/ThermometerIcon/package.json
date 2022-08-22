@@ -1,0 +1,4 @@
+{
+  "main": "dist/keystone-ui-icons-icons-ThermometerIcon.cjs.js",
+  "module": "dist/keystone-ui-icons-icons-ThermometerIcon.esm.js"
+}

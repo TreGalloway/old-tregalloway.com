@@ -1,0 +1,4 @@
+{
+  "main": "dist/keystone-ui-icons-icons-SpeakerIcon.cjs.js",
+  "module": "dist/keystone-ui-icons-icons-SpeakerIcon.esm.js"
+}

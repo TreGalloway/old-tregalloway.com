@@ -1,0 +1,4 @@
+{
+  "main": "dist/keystone-ui-icons-icons-ShieldIcon.cjs.js",
+  "module": "dist/keystone-ui-icons-icons-ShieldIcon.esm.js"
+}

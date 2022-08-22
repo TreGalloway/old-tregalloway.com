@@ -1,0 +1,4 @@
+{
+  "main": "dist/keystone-ui-icons-icons-CircleIcon.cjs.js",
+  "module": "dist/keystone-ui-icons-icons-CircleIcon.esm.js"
+}

@@ -1,0 +1,4 @@
+{
+  "main": "dist/keystone-ui-icons-icons-BoldIcon.cjs.js",
+  "module": "dist/keystone-ui-icons-icons-BoldIcon.esm.js"
+}

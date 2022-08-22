@@ -1,0 +1,4 @@
+{
+  "main": "dist/keystone-ui-icons-icons-ApertureIcon.cjs.js",
+  "module": "dist/keystone-ui-icons-icons-ApertureIcon.esm.js"
+}

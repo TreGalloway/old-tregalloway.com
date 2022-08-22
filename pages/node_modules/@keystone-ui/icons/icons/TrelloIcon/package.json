@@ -1,0 +1,4 @@
+{
+  "main": "dist/keystone-ui-icons-icons-TrelloIcon.cjs.js",
+  "module": "dist/keystone-ui-icons-icons-TrelloIcon.esm.js"
+}

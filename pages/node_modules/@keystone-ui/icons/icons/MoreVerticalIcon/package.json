@@ -1,0 +1,4 @@
+{
+  "main": "dist/keystone-ui-icons-icons-MoreVerticalIcon.cjs.js",
+  "module": "dist/keystone-ui-icons-icons-MoreVerticalIcon.esm.js"
+}
