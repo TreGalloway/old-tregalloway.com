@@ -303,6 +303,209 @@ input TagCreateInput {
   posts: PostRelateToManyForCreateInput
 }
 
+type BookNote {
+  id: ID!
+  title: String
+  status: String
+  content: BookNote_content_Document
+  publishDate: DateTime
+  updatedDate: DateTime
+  author: String
+}
+
+type BookNote_content_Document {
+  document(hydrateRelationships: Boolean! = false): JSON!
+}
+
+input BookNoteWhereUniqueInput {
+  id: ID
+}
+
+input BookNoteWhereInput {
+  AND: [BookNoteWhereInput!]
+  OR: [BookNoteWhereInput!]
+  NOT: [BookNoteWhereInput!]
+  id: IDFilter
+  title: StringFilter
+  status: StringNullableFilter
+  publishDate: DateTimeNullableFilter
+  updatedDate: DateTimeNullableFilter
+  author: StringFilter
+}
+
+input BookNoteOrderByInput {
+  id: OrderDirection
+  title: OrderDirection
+  status: OrderDirection
+  publishDate: OrderDirection
+  updatedDate: OrderDirection
+  author: OrderDirection
+}
+
+input BookNoteUpdateInput {
+  title: String
+  status: String
+  content: JSON
+  publishDate: DateTime
+  updatedDate: DateTime
+  author: String
+}
+
+input BookNoteUpdateArgs {
+  where: BookNoteWhereUniqueInput!
+  data: BookNoteUpdateInput!
+}
+
+input BookNoteCreateInput {
+  title: String
+  status: String
+  content: JSON
+  publishDate: DateTime
+  updatedDate: DateTime
+  author: String
+}
+
+type Project {
+  id: ID!
+  title: String
+  status: String
+  content: Project_content_Document
+}
+
+type Project_content_Document {
+  document(hydrateRelationships: Boolean! = false): JSON!
+}
+
+input ProjectWhereUniqueInput {
+  id: ID
+}
+
+input ProjectWhereInput {
+  AND: [ProjectWhereInput!]
+  OR: [ProjectWhereInput!]
+  NOT: [ProjectWhereInput!]
+  id: IDFilter
+  title: StringFilter
+  status: StringNullableFilter
+}
+
+input ProjectOrderByInput {
+  id: OrderDirection
+  title: OrderDirection
+  status: OrderDirection
+}
+
+input ProjectUpdateInput {
+  title: String
+  status: String
+  content: JSON
+}
+
+input ProjectUpdateArgs {
+  where: ProjectWhereUniqueInput!
+  data: ProjectUpdateInput!
+}
+
+input ProjectCreateInput {
+  title: String
+  status: String
+  content: JSON
+}
+
+type Tool {
+  id: ID!
+  title: String
+  status: String
+  content: Tool_content_Document
+}
+
+type Tool_content_Document {
+  document(hydrateRelationships: Boolean! = false): JSON!
+}
+
+input ToolWhereUniqueInput {
+  id: ID
+}
+
+input ToolWhereInput {
+  AND: [ToolWhereInput!]
+  OR: [ToolWhereInput!]
+  NOT: [ToolWhereInput!]
+  id: IDFilter
+  title: StringFilter
+  status: StringNullableFilter
+}
+
+input ToolOrderByInput {
+  id: OrderDirection
+  title: OrderDirection
+  status: OrderDirection
+}
+
+input ToolUpdateInput {
+  title: String
+  status: String
+  content: JSON
+}
+
+input ToolUpdateArgs {
+  where: ToolWhereUniqueInput!
+  data: ToolUpdateInput!
+}
+
+input ToolCreateInput {
+  title: String
+  status: String
+  content: JSON
+}
+
+type Gear {
+  id: ID!
+  title: String
+  status: String
+  content: Gear_content_Document
+}
+
+type Gear_content_Document {
+  document(hydrateRelationships: Boolean! = false): JSON!
+}
+
+input GearWhereUniqueInput {
+  id: ID
+}
+
+input GearWhereInput {
+  AND: [GearWhereInput!]
+  OR: [GearWhereInput!]
+  NOT: [GearWhereInput!]
+  id: IDFilter
+  title: StringFilter
+  status: StringNullableFilter
+}
+
+input GearOrderByInput {
+  id: OrderDirection
+  title: OrderDirection
+  status: OrderDirection
+}
+
+input GearUpdateInput {
+  title: String
+  status: String
+  content: JSON
+}
+
+input GearUpdateArgs {
+  where: GearWhereUniqueInput!
+  data: GearUpdateInput!
+}
+
+input GearCreateInput {
+  title: String
+  status: String
+  content: JSON
+}
+
 """
 The `JSON` scalar type represents JSON values as specified by [ECMA-404](http://www.ecma-international.org/publications/files/ECMA-ST/ECMA-404.pdf).
 """
@@ -330,6 +533,36 @@ type Mutation {
   updateTags(data: [TagUpdateArgs!]!): [Tag]
   deleteTag(where: TagWhereUniqueInput!): Tag
   deleteTags(where: [TagWhereUniqueInput!]!): [Tag]
+  createBookNote(data: BookNoteCreateInput!): BookNote
+  createBookNotes(data: [BookNoteCreateInput!]!): [BookNote]
+  updateBookNote(
+    where: BookNoteWhereUniqueInput!
+    data: BookNoteUpdateInput!
+  ): BookNote
+  updateBookNotes(data: [BookNoteUpdateArgs!]!): [BookNote]
+  deleteBookNote(where: BookNoteWhereUniqueInput!): BookNote
+  deleteBookNotes(where: [BookNoteWhereUniqueInput!]!): [BookNote]
+  createProject(data: ProjectCreateInput!): Project
+  createProjects(data: [ProjectCreateInput!]!): [Project]
+  updateProject(
+    where: ProjectWhereUniqueInput!
+    data: ProjectUpdateInput!
+  ): Project
+  updateProjects(data: [ProjectUpdateArgs!]!): [Project]
+  deleteProject(where: ProjectWhereUniqueInput!): Project
+  deleteProjects(where: [ProjectWhereUniqueInput!]!): [Project]
+  createTool(data: ToolCreateInput!): Tool
+  createTools(data: [ToolCreateInput!]!): [Tool]
+  updateTool(where: ToolWhereUniqueInput!, data: ToolUpdateInput!): Tool
+  updateTools(data: [ToolUpdateArgs!]!): [Tool]
+  deleteTool(where: ToolWhereUniqueInput!): Tool
+  deleteTools(where: [ToolWhereUniqueInput!]!): [Tool]
+  createGear(data: GearCreateInput!): Gear
+  createGears(data: [GearCreateInput!]!): [Gear]
+  updateGear(where: GearWhereUniqueInput!, data: GearUpdateInput!): Gear
+  updateGears(data: [GearUpdateArgs!]!): [Gear]
+  deleteGear(where: GearWhereUniqueInput!): Gear
+  deleteGears(where: [GearWhereUniqueInput!]!): [Gear]
   endSession: Boolean!
   authenticateUserWithPassword(
     email: String!
@@ -384,6 +617,38 @@ type Query {
   ): [Tag!]
   tag(where: TagWhereUniqueInput!): Tag
   tagsCount(where: TagWhereInput! = {}): Int
+  bookNotes(
+    where: BookNoteWhereInput! = {}
+    orderBy: [BookNoteOrderByInput!]! = []
+    take: Int
+    skip: Int! = 0
+  ): [BookNote!]
+  bookNote(where: BookNoteWhereUniqueInput!): BookNote
+  bookNotesCount(where: BookNoteWhereInput! = {}): Int
+  projects(
+    where: ProjectWhereInput! = {}
+    orderBy: [ProjectOrderByInput!]! = []
+    take: Int
+    skip: Int! = 0
+  ): [Project!]
+  project(where: ProjectWhereUniqueInput!): Project
+  projectsCount(where: ProjectWhereInput! = {}): Int
+  tools(
+    where: ToolWhereInput! = {}
+    orderBy: [ToolOrderByInput!]! = []
+    take: Int
+    skip: Int! = 0
+  ): [Tool!]
+  tool(where: ToolWhereUniqueInput!): Tool
+  toolsCount(where: ToolWhereInput! = {}): Int
+  gears(
+    where: GearWhereInput! = {}
+    orderBy: [GearOrderByInput!]! = []
+    take: Int
+    skip: Int! = 0
+  ): [Gear!]
+  gear(where: GearWhereUniqueInput!): Gear
+  gearsCount(where: GearWhereInput! = {}): Int
   keystone: KeystoneMeta!
   authenticatedItem: AuthenticatedItem
 }

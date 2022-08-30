@@ -38,3 +38,34 @@ model Tag {
   name  String @default("")
   posts Post[] @relation("Post_tags")
 }
+
+model BookNote {
+  id          String    @id @default(cuid())
+  title       String    @default("")
+  status      String?   @default("non-featured")
+  content     String    @default("[{\"type\":\"paragraph\",\"children\":[{\"text\":\"\"}]}]")
+  publishDate DateTime?
+  updatedDate DateTime?
+  author      String    @default("")
+}
+
+model Project {
+  id      String  @id @default(cuid())
+  title   String  @default("")
+  status  String? @default("non-featured")
+  content String  @default("[{\"type\":\"paragraph\",\"children\":[{\"text\":\"\"}]}]")
+}
+
+model Tool {
+  id      String  @id @default(cuid())
+  title   String  @default("")
+  status  String? @default("non-featured")
+  content String  @default("[{\"type\":\"paragraph\",\"children\":[{\"text\":\"\"}]}]")
+}
+
+model Gear {
+  id      String  @id @default(cuid())
+  title   String  @default("")
+  status  String? @default("non-featured")
+  content String  @default("[{\"type\":\"paragraph\",\"children\":[{\"text\":\"\"}]}]")
+}

@@ -13,6 +13,9 @@ import { format } from 'timeago.js'
 
 import { Post } from 'contentlayer/generated'
 
+import { query } from '.keystone/api'
+import { Lists } from '.keystone/types'
+
 type BlogCardProps = {
     data: Post
 }

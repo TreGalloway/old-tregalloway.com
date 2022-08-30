@@ -1,8 +1,15 @@
 import { NextSeo, ArticleJsonLd } from 'next-seo'
-import { allPosts, Post } from 'contentlayer/generated'
+// import { allPosts, Post } from 'contentlayer/generated'
 import { VStack, Heading, HStack, Text, Divider } from '@chakra-ui/react'
 import { useMDXComponent } from 'next-contentlayer/hooks'
-import type { GetStaticPaths, GetStaticProps } from 'next'
+// import type { GetStaticPaths, GetStaticProps } from 'next'
+import {
+    GetStaticPathsResult,
+    GetStaticPropsContext,
+    InferGetStaticPropsType,
+} from 'next'
+import { query } from '.keystone/api'
+import { Lists } from '.keystone/types'
 import MDXComponents from '@/components/mdx-component/mdx-components'
 import formatDate from '@/utils/format-date'
 import { chakra } from '@chakra-ui/system'
@@ -11,19 +18,25 @@ import NewsletterForm from '../../src/components/newsletter-form/newsletter-form
 
 import SideButtons from '@/components/buttons/side-buttons'
 
+type Post = {
+    id: string
+    title: string
+    content: string
+}
+
 export default function Blog({ post }: { post: Post }) {
     const title = `${post.title} — Tre Galloway`
-    const description = post.description
+    // const description = post.description
     // Get MDX component for post
-    const Component = useMDXComponent(post.body.code)
-    const date = formatDate(post.datePublished)
-    const image = post.cover
+    const Component = useMDXComponent(post.content)
+    // const date = formatDate(post.datePublished)
+    // const image = post.cover
 
     return (
         <>
             <NextSeo
                 title={title}
-                description={post.description}
+                // description={post.description}
                 robotsProps={{
                     nosnippet: false,
                     notranslate: false,
@@ -34,9 +47,9 @@ export default function Blog({ post }: { post: Post }) {
                     maxVideoPreview: -1,
                 }}
                 openGraph={{
-                    description,
+                    // description,
                     title: title,
-                    url: `https://tregallloway.com/blog/${post.slug}`,
+                    // url: `https://tregallloway.com/blog/${post.slug}`,
                     images: [
                         {
                             url: `https://res.cloudinary.com/tregalloway/image/upload/${encodeURIComponent(
@@ -46,7 +59,7 @@ export default function Blog({ post }: { post: Post }) {
                     ],
                 }}
             />
-            <ArticleJsonLd
+            {/* <ArticleJsonLd
                 type="Blog"
                 url="https://tregallloway.com/blog"
                 title="Blog headline"
@@ -59,7 +72,7 @@ export default function Blog({ post }: { post: Post }) {
                 dateModified={post.datePublished}
                 authorName={post.author}
                 description={post.description}
-            />
+            /> */}
 
             <VStack
                 position="relative"
@@ -80,10 +93,10 @@ export default function Blog({ post }: { post: Post }) {
                     >
                         <Text color="gray.400" fontSize="sm">
                             Published on {''}
-                            <time dateTime={date.iso}>{date.pretty}</time>
+                            {/* <time dateTime={date.iso}>{date.pretty}</time> */}
                         </Text>
                         <Text color="gray.400" fontSize="sm">
-                            By {post.author}
+                            {/* By {post.author} */}
                         </Text>
 
                         {/* <Text color="gray.500" fontSize="sm">
@@ -91,7 +104,7 @@ export default function Blog({ post }: { post: Post }) {
                             views
                         </Text> */}
                         <Text color="gray.400" fontSize="sm" as="i">
-                            <chakra.span>{post.readingTime.text}</chakra.span>
+                            {/* <chakra.span>{post.readingTime.text}</chakra.span> */}
                         </Text>
                     </HStack>
                     {/* <Image
@@ -106,22 +119,47 @@ export default function Blog({ post }: { post: Post }) {
                 <Divider />
                 <NewsletterForm />
             </VStack>
-            <SideButtons key={post.tweetUrl} data={post} />
+            {/* <SideButtons key={post.tweetUrl} data={post} /> */}
         </>
     )
 }
-export const getStaticPaths: GetStaticPaths = async () => {
+// export const getStaticPaths: GetStaticPaths = async () => {
+//     return {
+//         paths: allPosts.map((post) => ({ params: { slug: post.slug } })),
+//         fallback: false,
+//     }
+// }
+
+// export const getStaticProps: GetStaticProps = async ({ params }) => {
+//     const post = allPosts.find((p) => p.slug === params.slug)
+//     return {
+//         props: {
+//             post,
+//         },
+//     }
+// }
+export async function getStaticPaths(): Promise<GetStaticPathsResult> {
+    const posts = (await query.Post.findMany({
+        query: `slug`,
+    })) as { slug: string }[]
+
+    const paths = posts
+        .filter(({ slug }) => !!slug)
+        .map(({ slug }) => `/post/${slug}`)
+
     return {
-        paths: allPosts.map((post) => ({ params: { slug: post.slug } })),
+        paths,
         fallback: false,
     }
 }
 
-export const getStaticProps: GetStaticProps = async ({ params }) => {
-    const post = allPosts.find((p) => p.slug === params.slug)
-    return {
-        props: {
-            post,
-        },
+export async function getStaticProps({ params }: GetStaticPropsContext) {
+    const post = (await query.Post.findOne({
+        where: { slug: params!.slug as string },
+        query: 'id title content',
+    })) as Post | null
+    if (!post) {
+        return { notFound: true }
     }
+    return { props: { post } }
 }
